@@ -1,0 +1,43 @@
+.productCard {
+  margin-bottom: 20px;
+}
+
+.productCard .image {
+  background: #ebebeb;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  position: relative;
+}
+.productCard .image span {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background: #b72222;
+  color: var(--color-white);
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.productCard .image img {
+  width: 200px;
+}
+.productCard .Content {
+  margin-top: 20px;
+}
+.Content h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.orgPrice {
+  font-size: 16px;
+  text-decoration: line-through;
+}

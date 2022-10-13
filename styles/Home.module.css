@@ -1,0 +1,66 @@
+.ImageDiv {
+  width: 50%;
+  padding: 15px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+}
+.price {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.orgPrice {
+  font-size: 22px;
+  text-decoration: line-through;
+}
+.colorDiv h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+.sizeDiv h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+.sizeDiv a {
+  color: var(--color-black);
+}
+.quantity select {
+  width: 150px;
+  border: 1px solid var(--color-grey);
+  border-radius: 0;
+  height: 60px;
+}
+.quantity button {
+  background-color: var(--color-black);
+  width: 100%;
+  color: var(--color-white);
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.pinCode input {
+  border: 1px solid var(--color-grey);
+  border-radius: 0;
+  height: 50px;
+}
+.pinCode button {
+  background: var(--color-black);
+  height: 50px;
+  border-radius: 0;
+  color: var(--color-white);
+}
+.pinCode a {
+  color: #777;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.topSellerSection h3 {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}

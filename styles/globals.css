@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-white: #ffffff;
+  --color-grey: #cccccc;
+  --color-black: #000000;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Roboto", sans-serif !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: var(--color-white);
+    background: var(--color-black);
+  }
+}
+
+.accordion-item {
+  border: 0 !important;
+  background: none;
+  border-bottom: 1px solid var(--color-grey) !important;
+  border-radius: 0 !important;
+}
+.accordion-item button {
+  color: var(--color-black) !important;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0;
+  background: none !important;
+  padding: 10px 1.25rem !important;
+}
+.accordion-body p {
+  font-size: 12px;
+}
+.accordion-button::after {
+  background-image: none !important;
+  content: "-" !important;
+  font-size: 16px;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: none !important;
+  content: "+" !important;
+}
+.progress {
+  width: 100%;
+  height: 8px !important;
+}
+.progress-bar {
+  background: #5a5757 !important;
+}

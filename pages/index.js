@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <AppLayout>
         <section className={styles.homeSlider}>
-          <div className={styles.slides}>
+          <div className={`${styles.slides}`}>
             <img src="/images/slider.jpeg" alt="slider" width="100%" />
           </div>
         </section>

@@ -55,6 +55,7 @@ a {
   background-image: none !important;
   content: "-" !important;
   font-size: 16px;
+  text-align: center;
 }
 .accordion-button:not(.collapsed)::after {
   background-image: none !important;
@@ -65,5 +66,8 @@ a {
   height: 8px !important;
 }
 .progress-bar {
-  background: #5a5757 !important;
+  background: #8f8f8e !important;
+}
+.accordion-item:has(.show) {
+  border-bottom: 0 !important;
 }

@@ -6,3 +6,5 @@ export * from "./ProductDetail";
 export * from "./ReviewSection";
 export * from "./ProductCard";
 export * from "./Footer";
+export * from "./HomeProductCard";
+export * from "./SliderCard";

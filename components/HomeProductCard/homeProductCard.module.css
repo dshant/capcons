@@ -1,0 +1,25 @@
+.productWrapper {
+  background: #ebebeb;
+  text-align: center;
+  height: 400px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.productWrapper .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.productWrapper img {
+  width: 200px;
+}
+.productWrapper h3 {
+  margin-top: auto;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 300;
+}

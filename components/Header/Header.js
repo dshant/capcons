@@ -15,7 +15,7 @@ export const Header = () => {
       <header>
         <Container className="py-3">
           <div className="d-flex justify-content-end align-items-center gap-3">
-            <ul className="d-flex gap-3 list-unstyled align-items-center">
+            <ul className="d-flex gap-3 list-unstyled align-items-center mb-0">
               <li>
                 <BsFillCartFill />
               </li>

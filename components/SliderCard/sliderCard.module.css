@@ -1,0 +1,22 @@
+.footwearSection {
+  background: #ebebeb;
+  padding: 50px 0;
+}
+.wrapperImg {
+  text-align: center;
+}
+.wrapperImg img {
+  margin-bottom: 40px;
+}
+.sliderCard h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.content {
+  padding-top: 20px;
+}
+.content p,
+.content span {
+  font-size: 14px;
+  font-weight: 300;
+}

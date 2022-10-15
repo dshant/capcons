@@ -1,0 +1,97 @@
+.ImageDiv {
+  width: 50%;
+  padding: 15px;
+}
+.ImageDiv:hover {
+  cursor: url();
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+}
+.price {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.orgPrice {
+  font-size: 18px;
+  text-decoration: line-through;
+  color: #444;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.colorDiv h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+.sizeDiv h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+.sizeDiv a {
+  color: var(--color-black);
+}
+.quantity select {
+  width: 150px;
+  border: 1px solid var(--color-grey);
+  border-radius: 0;
+  height: 60px;
+}
+.quantity button {
+  background-color: var(--color-black);
+  width: 100%;
+  color: var(--color-white);
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.quantity button:hover {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+}
+.pinCode input {
+  border: 1px solid var(--color-grey);
+  border-radius: 0;
+  height: 50px;
+}
+.pinCode button {
+  background: var(--color-black);
+  height: 50px;
+  border-radius: 0;
+  color: var(--color-white);
+}
+.pinCode button:hover {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+}
+.pinCode a {
+  color: var(--color-grey);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.topSellerSection h3 {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.benifitsCard {
+  justify-content: space-around;
+}
+.benifits img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.benifits h6 {
+  font-size: 12px;
+  color: var(--color-black);
+  font-weight: 400;
+  margin-top: 10px;
+}
+.customCursor {
+  cursor: url(/images/zoom-in.svg), auto;
+}

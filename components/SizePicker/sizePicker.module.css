@@ -7,3 +7,7 @@
 .sizeDiv button:hover {
   border: 1px solid var(--color-grey);
 }
+.sizeDiv a {
+  color: #444;
+  font-size: 12px;
+}

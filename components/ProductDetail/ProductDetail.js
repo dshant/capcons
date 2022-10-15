@@ -6,7 +6,7 @@ export const ProductDetail = () => {
     <>
       <div>
         <Accordion className="mb-3" defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
+          <Accordion.Item className="mb-3" eventKey="0">
             <Accordion.Header>Description</Accordion.Header>
             <Accordion.Body>
               <p>
@@ -18,9 +18,7 @@ export const ProductDetail = () => {
               </p>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
-        <Accordion className="mb-3" defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
+          <Accordion.Item className="mb-3" eventKey="1">
             <Accordion.Header>Details</Accordion.Header>
             <Accordion.Body>
               <p>
@@ -32,9 +30,7 @@ export const ProductDetail = () => {
               </p>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
-        <Accordion className="mb-3" defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
+          <Accordion.Item className="mb-3" eventKey="2">
             <Accordion.Header>Features</Accordion.Header>
             <Accordion.Body>
               <p>

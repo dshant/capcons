@@ -1,66 +1,59 @@
-.ImageDiv {
-  width: 50%;
-  padding: 15px;
+.products {
+  padding: 80px 0;
 }
-
-.title {
-  font-size: 36px;
+.wrapperImg {
+  text-align: center;
+}
+.wrapperImg img {
+  margin-bottom: 40px;
+}
+.wrapperImg h3 {
+  font-size: 24px;
+  font-weight: 300;
+}
+.footwearSection {
+  background: #ebebeb;
+  padding: 100px 0;
+}
+.sliderSection {
+  padding: 80px 0 80px 80px;
+}
+.greyBg {
+  background: #d9d9d9 !important;
+}
+.instagramSection {
+  padding: 80px 0 40px;
+}
+.instaCard {
+  background: #d9d9d9 !important;
+  width: 20%;
+  height: 250px;
+}
+.instagramSection h3 {
+  text-align: center;
   font-weight: 400;
 }
-.price {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 3px;
-}
-.orgPrice {
-  font-size: 22px;
-  text-decoration: line-through;
-}
-.colorDiv h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-black);
-}
-.sizeDiv h5 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-black);
-}
-.sizeDiv a {
-  color: var(--color-black);
-}
-.quantity select {
-  width: 150px;
-  border: 1px solid var(--color-grey);
-  border-radius: 0;
-  height: 60px;
-}
-.quantity button {
-  background-color: var(--color-black);
-  width: 100%;
-  color: var(--color-white);
-  border-radius: 0;
-  text-transform: uppercase;
-}
-
-.pinCode input {
-  border: 1px solid var(--color-grey);
-  border-radius: 0;
-  height: 50px;
-}
-.pinCode button {
-  background: var(--color-black);
-  height: 50px;
-  border-radius: 0;
-  color: var(--color-white);
-}
-.pinCode a {
-  color: #777;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.topSellerSection h3 {
+.instagramSection p {
+  text-align: center;
   font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.tShirtSectionWrap {
+  padding: 80px 0;
+}
+.tShirtSection {
+  height: 350px;
+  background: #d9d9d9 !important;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.tShirtSection .Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+}
+.tShirtSection .Content h3 {
+  font-weight: 300;
+  font-size: 24px;
 }

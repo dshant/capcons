@@ -33,7 +33,32 @@ a {
     background: var(--color-black);
   }
 }
-
+.swiper-modal .modal-dialog {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+.swiper-modal .modal-header {
+  border: 0;
+  position: fixed;
+  right: 25px;
+  z-index: 111;
+  top: 20px;
+}
+.swiper-modal .modal-header button {
+  background-image: url("/images/close-white.svg") !important;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.swiper-modal .modal-body {
+  padding: 0 !important;
+}
+.modal-backdrop {
+  background-color: var(--color-white) !important;
+  opacity: 1 !important;
+}
+/* .swiper-wrapper {
+  transition-duration: 0ms !important;
+} */
 .accordion-item {
   border: 0 !important;
   background: none;
@@ -70,4 +95,13 @@ a {
 }
 .accordion-item:has(.show) {
   border-bottom: 0 !important;
+}
+.customSlider2 {
+  overflow: auto !important;
+}
+.swiper-slide {
+  height: 100% !important;
+}
+.modal-content {
+  border: 0 !important;
 }

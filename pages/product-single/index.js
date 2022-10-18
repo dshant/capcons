@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Col,
@@ -9,6 +9,7 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
+import { Swiper } from "swiper/react";
 import {
   AppLayout,
   ColorPicker,
@@ -19,11 +20,191 @@ import {
 } from "../../components";
 import styles from "./index.module.css";
 
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+const images = [
+  {
+    id: "image-1",
+    path: "/images/modal.jpeg",
+  },
+  {
+    id: "image-2",
+    path: "/images/image.png",
+  },
+  {
+    id: "image-3",
+    path: "/images/modal.jpeg",
+  },
+  {
+    id: "image-4",
+    path: "/images/image.png",
+  },
+];
+// const homeImages = [
+//   {
+//     id: "1",
+//     path: "/images/image.png",
+//   },
+//   {
+//     id: "2",
+//     path: "/images/image.png",
+//   },
+//   {
+//     id: "3",
+//     path: "/images/image.png",
+//   },
+//   {
+//     id: "4",
+//     path: "/images/image.png",
+//   },
+//   {
+//     id: "5",
+//     path: "/images/image.png",
+//   },
+// ];
+// const slideImages = [
+//   {
+//     id: "1",
+//     path: "/images/modal.jpeg",
+//   },
+//   {
+//     id: "2",
+//     path: "/images/modal.jpeg",
+//   },
+//   {
+//     id: "3",
+//     path: "/images/modal.jpeg",
+//   },
+//   {
+//     id: "4",
+//     path: "/images/modal.jpeg",
+//   },
+// ];
+
+const colorsArray = [
+  {
+    id: "1",
+    colorImage: "/images/shoe.png",
+    sliderimages: [
+      {
+        id: "1",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "2",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "3",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "4",
+        path: "/images/modal.jpeg",
+      },
+    ],
+  },
+  {
+    id: "2",
+    colorImage: "/images/shoe.png",
+    sliderimages: [
+      {
+        id: "1",
+        path: "/images/image.png",
+      },
+      {
+        id: "2",
+        path: "/images/image.png",
+      },
+      {
+        id: "3",
+        path: "/images/image.png",
+      },
+      {
+        id: "4",
+        path: "/images/image.png",
+      },
+      // {
+      //   id: "5",
+      //   path: "/images/image.png",
+      // },
+    ],
+  },
+  {
+    id: "3",
+    colorImage: "/images/shoe.png",
+    sliderimages: [
+      {
+        id: "1",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "2",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "3",
+        path: "/images/modal.jpeg",
+      },
+      {
+        id: "4",
+        path: "/images/modal.jpeg",
+      },
+    ],
+  },
+  {
+    id: "4",
+    colorImage: "/images/shoe.png",
+    sliderimages: [
+      {
+        id: "1",
+        path: "/images/image.png",
+      },
+      {
+        id: "2",
+        path: "/images/image.png",
+      },
+      {
+        id: "3",
+        path: "/images/image.png",
+      },
+      {
+        id: "4",
+        path: "/images/image.png",
+      },
+    ],
+  },
+
+  // {
+  //   id: "1",
+  //   path: "/images/shoe.png",
+  // },
+  // {
+  //   id: "2",
+  //   path: "/images/shoe.png",
+  // },
+  // {
+  //   id: "3",
+  //   path: "/images/shoe.png",
+  // },
+  // {
+  //   id: "4",
+  //   path: "/images/shoe.png",
+  // },
+];
+
 export default function ProductSingle() {
   const [show, setShow] = useState(false);
+  const [mobileShow, mobileSetShow] = useState(false);
+  const [desktopActiveImage, setActiveDesktopImage] = useState(images[0].id);
+  const [selectedColor, setSelectedColor] = useState(colorsArray[0]);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleMobileClose = () => mobileSetShow(false);
 
   return (
     <>
@@ -33,34 +214,62 @@ export default function ProductSingle() {
             <Row>
               <Col md={7}>
                 <div className={`d-flex flex-wrap ${styles.customCursor}`}>
-                  <div className={styles.ImageDiv}>
-                    <img
-                      src="/images/image.png"
-                      alt=""
-                      width="100%"
-                      onClick={handleShow}
-                    />
+                  {selectedColor?.sliderimages?.map((data) => (
+                    <div className={styles.ImageDiv} key={data?.id}>
+                      <img
+                        src={data?.path}
+                        alt=""
+                        width="100%"
+                        onClick={() => setShow(true)}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.mobileSlider}>
+                  <div className={styles.mobileHead}>
+                    <h3 className={styles.title}>Creek Boots Olive Green</h3>
+                    <p className={styles.price}> $8,999</p>
+                    <p className={styles.orgPrice}> $10,999</p>
                   </div>
-                  <div className={styles.ImageDiv}>
-                    <img src="/images/image.png" alt="" width="100%" />
-                  </div>
-                  <div className={styles.ImageDiv}>
-                    <img src="/images/image.png" alt="" width="100%" />
-                  </div>
-                  <div className={styles.ImageDiv}>
-                    <img src="/images/image.png" alt="" width="100%" />
-                  </div>
-                  <div className={styles.ImageDiv}>
-                    <img src="/images/image.png" alt="" width="100%" />
-                  </div>
+                  <Swiper
+                    style={{
+                      "--swiper-navigation-color": "#000",
+                      // "--swiper-pagination-color": "#fff",
+                    }}
+                    pagination={true}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    onSlideChange={() => console.log("slide change")}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    modules={[Pagination]}
+                  >
+                    {selectedColor?.sliderimages?.map((data) => (
+                      <SwiperSlide key={data?.id}>
+                        <div className={`image `}>
+                          <img
+                            src={data?.path}
+                            alt="..."
+                            className="img-fluid"
+                            onClick={() => mobileSetShow(true)}
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </Col>
               <Col md={5}>
                 <div className={styles.detail}>
-                  <h3 className={styles.title}>Creek Boots Olive Green</h3>
-                  <p className={styles.price}> $8,999</p>
-                  <p className={styles.orgPrice}> $10,999</p>
-                  <ColorPicker />
+                  <div className={styles.deskHead}>
+                    <h3 className={styles.title}>Creek Boots Olive Green</h3>
+                    <p className={styles.price}> $8,999</p>
+                    <p className={styles.orgPrice}> $10,999</p>
+                  </div>
+                  <ColorPicker
+                    setSelectedColor={setSelectedColor}
+                    selectedColor={selectedColor}
+                    colorsArray={colorsArray}
+                  />
                   <SizePicker />
                   <div className={` pt-5 pb-3 ${styles.quantity}`}>
                     <div className="d-flex gap-3">
@@ -73,7 +282,7 @@ export default function ProductSingle() {
                     </div>
                   </div>
                   <div
-                    className={`d-flex gap-4 align-items-center ${styles.pinCode}`}
+                    className={`d-flex gap-4 flex-wrap align-items-center ${styles.pinCode}`}
                   >
                     <Form className="d-flex align-items-center gap-2">
                       <Form.Control
@@ -130,21 +339,106 @@ export default function ProductSingle() {
             </Row>
           </Container>
         </section>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          className={` ${
+            setShow ? styles.swiperHideModal : styles.swiperModal
+          } swiper-modal`}
+        >
+          <Modal.Header closeButton></Modal.Header>
           <Modal.Body>
-            <h2>dvc</h2>
+            <div>
+              <Row>
+                <Col md={2}>
+                  <div
+                    style={{
+                      position: "fixed",
+                      width: "250px",
+                      top: 0,
+                      height: "100vh",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 20,
+                      overflow: "auto",
+                    }}
+                  >
+                    {images.map((i) => (
+                      <img
+                        style={{
+                          border:
+                            desktopActiveImage === i.id
+                              ? "1px solid black"
+                              : null,
+
+                          height: 160,
+                          width: 120,
+                          margin: "auto",
+                        }}
+                        src={i.path}
+                        alt="..."
+                        className="img-fluid"
+                        onClick={() => {
+                          setActiveDesktopImage(i.id);
+                          const link = document.createElement("a");
+                          link.href = "#" + i.id;
+                          document.body.appendChild(link);
+                          link.click();
+                          document.body.removeChild(link);
+                        }}
+                      />
+                    ))}
+                  </div>
+                </Col>
+                <Col md={10}>
+                  <div style={{ padding: "20px", marginLeft: 20 }}>
+                    {images.map((i) => (
+                      <div
+                        key={i.id}
+                        id={i.id}
+                        className={`image ${styles.Image}`}
+                        onClick={handleClose}
+                      >
+                        <img src={i.path} alt="..." className="img-fluid" />
+                      </div>
+                    ))}
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
+        </Modal>
+        <Modal
+          show={mobileShow}
+          onHide={handleMobileClose}
+          className={`swiper-modal`}
+        >
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <Container>
+              <Row>
+                <Col md={12}>
+                  <div className={`d-flex flex-wrap `}>
+                    <div className={styles.ImageDiv}>
+                      <img src="/images/modal.jpeg" alt="" width="100%" />
+                    </div>
+                    <div className={styles.ImageDiv}>
+                      <img src="/images/modal.jpeg" alt="" width="100%" />
+                    </div>
+                    <div className={styles.ImageDiv}>
+                      <img src="/images/modal.jpeg" alt="" width="100%" />
+                    </div>
+                    <div className={styles.ImageDiv}>
+                      <img src="/images/modal.jpeg" alt="" width="100%" />
+                    </div>
+                    <div className={styles.ImageDiv}>
+                      <img src="/images/modal.jpeg" alt="" width="100%" />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </Modal.Body>
         </Modal>
       </AppLayout>
     </>

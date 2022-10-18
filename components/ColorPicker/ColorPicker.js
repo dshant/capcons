@@ -1,24 +1,31 @@
 import React from "react";
 import styles from "./colorPicker.module.css";
 
-export const ColorPicker = () => {
+// const colors = [
+
+// ];
+
+export const ColorPicker = ({
+  selectedColor,
+  setSelectedColor,
+  colorsArray,
+}) => {
   return (
     <>
       <div className={styles.colorDiv}>
         <h4>COLOR</h4>
         <div className="d-flex gap-3">
-          <div className={styles.option}>
-            <img src="/images/shoe.png" alt="shoe" />
-          </div>
-          <div className={styles.option}>
-            <img src="/images/shoe.png" alt="shoe" />
-          </div>
-          <div className={styles.option}>
-            <img src="/images/shoe.png" alt="shoe" />
-          </div>
-          <div className={styles.option}>
-            <img src="/images/shoe.png" alt="shoe" />
-          </div>
+          {colorsArray?.map((color) => (
+            <div
+              className={`${styles.option} ${
+                selectedColor?.id === color.id ? styles.active : ""
+              }`}
+              key={color?.id}
+              onClick={() => setSelectedColor(color)}
+            >
+              <img src={color?.colorImage} alt="shoe" />
+            </div>
+          ))}
         </div>
       </div>
     </>

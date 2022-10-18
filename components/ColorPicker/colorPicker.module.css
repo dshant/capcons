@@ -11,3 +11,7 @@
 .colorDiv .option img {
   width: 100%;
 }
+
+.active {
+  border: 1px solid black !important;
+}

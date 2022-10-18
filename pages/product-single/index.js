@@ -44,46 +44,6 @@ const images = [
     path: "/images/image.png",
   },
 ];
-// const homeImages = [
-//   {
-//     id: "1",
-//     path: "/images/image.png",
-//   },
-//   {
-//     id: "2",
-//     path: "/images/image.png",
-//   },
-//   {
-//     id: "3",
-//     path: "/images/image.png",
-//   },
-//   {
-//     id: "4",
-//     path: "/images/image.png",
-//   },
-//   {
-//     id: "5",
-//     path: "/images/image.png",
-//   },
-// ];
-// const slideImages = [
-//   {
-//     id: "1",
-//     path: "/images/modal.jpeg",
-//   },
-//   {
-//     id: "2",
-//     path: "/images/modal.jpeg",
-//   },
-//   {
-//     id: "3",
-//     path: "/images/modal.jpeg",
-//   },
-//   {
-//     id: "4",
-//     path: "/images/modal.jpeg",
-//   },
-// ];
 
 const colorsArray = [
   {
@@ -178,23 +138,6 @@ const colorsArray = [
       },
     ],
   },
-
-  // {
-  //   id: "1",
-  //   path: "/images/shoe.png",
-  // },
-  // {
-  //   id: "2",
-  //   path: "/images/shoe.png",
-  // },
-  // {
-  //   id: "3",
-  //   path: "/images/shoe.png",
-  // },
-  // {
-  //   id: "4",
-  //   path: "/images/shoe.png",
-  // },
 ];
 
 export default function ProductSingle() {
@@ -363,7 +306,7 @@ export default function ProductSingle() {
                       overflow: "auto",
                     }}
                   >
-                    {images.map((i) => (
+                    {selectedColor?.sliderimages?.map((i) => (
                       <img
                         style={{
                           border:
@@ -392,7 +335,7 @@ export default function ProductSingle() {
                 </Col>
                 <Col md={10}>
                   <div style={{ padding: "20px", marginLeft: 20 }}>
-                    {images.map((i) => (
+                    {selectedColor?.sliderimages.map((i) => (
                       <div
                         key={i.id}
                         id={i.id}
@@ -419,21 +362,11 @@ export default function ProductSingle() {
               <Row>
                 <Col md={12}>
                   <div className={`d-flex flex-wrap `}>
-                    <div className={styles.ImageDiv}>
-                      <img src="/images/modal.jpeg" alt="" width="100%" />
-                    </div>
-                    <div className={styles.ImageDiv}>
-                      <img src="/images/modal.jpeg" alt="" width="100%" />
-                    </div>
-                    <div className={styles.ImageDiv}>
-                      <img src="/images/modal.jpeg" alt="" width="100%" />
-                    </div>
-                    <div className={styles.ImageDiv}>
-                      <img src="/images/modal.jpeg" alt="" width="100%" />
-                    </div>
-                    <div className={styles.ImageDiv}>
-                      <img src="/images/modal.jpeg" alt="" width="100%" />
-                    </div>
+                    {selectedColor?.sliderimages.map((i) => (
+                      <div className={styles.ImageDiv} key={i.id} id={i.id}>
+                        <img src={i?.path} alt="" width="100%" />
+                      </div>
+                    ))}
                   </div>
                 </Col>
               </Row>

@@ -1,25 +1,30 @@
 .productWrapper {
-  background: #ebebeb;
   text-align: center;
-  height: 400px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
   margin-bottom: 20px;
+  position: relative;
 }
 .productWrapper .image {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 100%;
 }
+
 .productWrapper img {
-  width: 200px;
+  width: 100%;
 }
 .productWrapper h3 {
-  margin-top: auto;
-  margin-bottom: 40px;
-  font-size: 24px;
-  font-weight: 300;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 38px;
+  text-align: center;
+  color: var(--color-white);
+}
+.content {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
 }

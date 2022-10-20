@@ -6,8 +6,9 @@ export const SliderCard = () => {
     <>
       <div className={styles.sliderCard}>
         <div className={`${styles.footwearSection} ${styles.wrapperImg}`}>
-          <img src="/images/woodland.webp" alt="woodland" width="200px" />
+          <img src="/images/shoe-product.png" alt="woodland" width="200px" />
         </div>
+
         <div className={styles.content}>
           <h3>Blue Shorts</h3>
           <div className="d-flex justify-content-between">

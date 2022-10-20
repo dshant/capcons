@@ -8,3 +8,6 @@ export * from "./ProductCard";
 export * from "./Footer";
 export * from "./HomeProductCard";
 export * from "./SliderCard";
+export * from "./UI";
+export * from "./ExploreCard";
+export * from "./DealCard";

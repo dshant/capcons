@@ -1,7 +1,16 @@
 .footerSection {
-  background-color: #6e6e6e;
+  background-color: var(--color-green);
   color: var(--color-white);
   padding: 60px 0 0;
+}
+.footerSection h5 {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-white);
+  margin-bottom: 20px;
 }
 
 .list {
@@ -9,15 +18,23 @@
 }
 .list li {
   list-style: none;
-  font-size: 14px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
   font-weight: 300;
-  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  margin-bottom: 15px;
 }
 .copyRight {
   border-top: 1px solid #606060;
   text-align: center;
   margin-top: 60px;
   padding: 20px 10px;
-  font-size: 14px;
   font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--color-white);
 }

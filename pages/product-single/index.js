@@ -282,21 +282,31 @@ export default function ProductSingle() {
             </Row>
           </Container>
         </section>
-        <Modal
-          show={show}
-          onHide={handleClose}
-          className={` ${
-            setShow ? styles.swiperHideModal : styles.swiperModal
-          } swiper-modal`}
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            backgroundColor: "white",
+            transition: "all 1s ease",
+            height: show ? "100vh" : "0px",
+            width: show ? "100vw" : "0px",
+            overflow: "auto",
+            transformOrigin: "100px 100px",
+          }}
+          className={`swiper-modal`}
         >
-          <Modal.Header closeButton></Modal.Header>
+          <button className="close-btn" onClick={handleClose}>
+            close
+          </button>
+
           <Modal.Body>
             <div>
               <Row>
                 <Col md={2}>
                   <div
                     style={{
-                      position: "fixed",
+                      position: "sticky",
                       width: "250px",
                       top: 0,
                       height: "100vh",
@@ -304,6 +314,7 @@ export default function ProductSingle() {
                       flexDirection: "column",
                       gap: 20,
                       overflow: "auto",
+                      background: "white",
                     }}
                   >
                     {selectedColor?.sliderimages?.map((i) => (
@@ -350,7 +361,7 @@ export default function ProductSingle() {
               </Row>
             </div>
           </Modal.Body>
-        </Modal>
+        </div>
         <Modal
           show={mobileShow}
           onHide={handleMobileClose}

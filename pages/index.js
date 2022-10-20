@@ -2,57 +2,209 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
-import { AppLayout, HomeProductCard, SliderCard } from "../components";
+import {
+  AppLayout,
+  Button,
+  DealCard,
+  ExploreCard,
+  HomeProductCard,
+  SliderCard,
+} from "../components";
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const homeCardData = [
+  {
+    img: "/images/product-1.jpg",
+    title: "Bestsellers",
+  },
+  {
+    img: "/images/product-2.png",
+    title: "Sneakers",
+  },
+  {
+    img: "/images/product-3.png",
+    title: "Boots",
+  },
+  {
+    img: "/images/product-4.png",
+    title: "Casuals & Canvas",
+  },
+  {
+    img: "/images/product-5.png",
+    title: "Men’s Apparel",
+  },
+  {
+    img: "/images/product-6.png",
+    title: "Women’s Apparel",
+  },
+];
+
+const threeCards = [
+  {
+    img: "/images/bags.jpg",
+    title: "Bags",
+  },
+  {
+    img: "/images/wears.jpg",
+    title: "Innerwear",
+  },
+  {
+    img: "/images/belts.jpg",
+    title: "Belts & More",
+  },
+];
+const exploreData = [
+  {
+    img: "/images/t-shirt.jpg",
+    title: "T-Shirt",
+    text: "Shop Men | Shop Women",
+  },
+  {
+    img: "/images/shirts.jpg",
+    title: "Shirts",
+    text: "Shop Men | Shop Women",
+  },
+  {
+    img: "/images/jackets.jpg",
+    title: "Jackets",
+    text: "Shop Men | Shop Women",
+  },
+  {
+    img: "/images/jeans.jpg",
+    title: "Jeans",
+    text: "Shop Men | Shop Women",
+  },
+];
+
+const instaCard = [
+  {
+    img: "/images/insta-1.jpg",
+  },
+  {
+    img: "/images/insta-2.jpg",
+  },
+  {
+    img: "/images/insta-3.jpg",
+  },
+  {
+    img: "/images/insta-4.jpg",
+  },
+  {
+    img: "/images/insta-5.jpg",
+  },
+];
+const dealCardData = [
+  {
+    img: "/images/shoe-product.png",
+    title: "Creek Boots Olive green",
+    orgRate: "10,999",
+    rate: "8,999",
+  },
+  {
+    img: "/images/shoe-product.png",
+    title: "Excrusion Khaki",
+    orgRate: "10,999",
+    rate: "8,999",
+  },
+  {
+    img: "/images/shoe-product.png",
+    title: "Camel Hiking boots for Men",
+    orgRate: "10,999",
+    rate: "8,999",
+  },
+  {
+    img: "/images/shoe-product.png",
+    title: "Creek Boots Olive green",
+    orgRate: "10,999",
+    rate: "8,999",
+  },
+  {
+    img: "/images/shoe-product.png",
+    title: "Camel Hiking boots for Men",
+    orgRate: "10,999",
+    rate: "8,999",
+  },
+];
 export default function Home() {
   return (
     <>
       <AppLayout>
         <section className={styles.homeSlider}>
           <div className={`${styles.slides}`}>
-            <img src="/images/slider.jpeg" alt="slider" width="100%" />
+            <img src="/images/banner.png" alt="slider" width="100%" />
           </div>
         </section>
         <section className={`${styles.products}`}>
           <Container>
             <Row>
-              <Col md={4}>
-                <HomeProductCard title="Bestsellers" />
-              </Col>
-              <Col md={4}>
-                <HomeProductCard title="Boots" />
-              </Col>
-              <Col md={4}>
-                <HomeProductCard title="Casuals & Canvas" />
-              </Col>
-              <Col md={4}>
-                <HomeProductCard title="Sneakers" />
-              </Col>
-              <Col md={4}>
-                <HomeProductCard title="Men's Apparel" />
-              </Col>
-              <Col md={4}>
-                <HomeProductCard title="Women's Apparel" />
-              </Col>
+              {homeCardData?.map((data, id) => (
+                <Col md={4} key={id}>
+                  <HomeProductCard data={data} />
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>
+        <section className={styles.bannerSection}>
+          <div className={styles.Image}>
+            <img src="/images/banner-2.png" alt="banner" width="100%" />
+          </div>
+          <div className={styles.bannerContent}>
+            <Button>Shop Now</Button>
+          </div>
+        </section>
+
+        <section className={styles.sliderSection}>
+          <div className={styles.wrapper}>
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={4.5}
+              breakpoints={{
+                // when window width is >= 640px
+                0: {
+                  slidesPerView: 1.5,
+                },
+                // when window width is >= 768px
+                768: {
+                  slidesPerView: 2.5,
+                },
+                // when window width is >= 1200px
+                1200: {
+                  slidesPerView: 4.5,
+                },
+              }}
+            >
+              {dealCardData?.map((data, id) => (
+                <SwiperSlide key={id}>
+                  <DealCard data={data} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
         <section>
-          <Row>
+          <Row className={`mx-0 ${styles.customRow}`}>
             <Col md={6} className="px-0">
-              <div className={`${styles.footwearSection} ${styles.wrapperImg}`}>
-                <img src="/images/woodland.webp" alt="woodland" width="300px" />
-                <h3>Bags</h3>
+              <div
+                className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
+              >
+                <img src="/images/men.jpg" alt="men" width="100%" />
+                <div className={`${styles.Content} left-content`}>
+                  <h3 className={styles.whiteTitle}>Shop Men’s Apparel</h3>
+                  <Button>Shop Now</Button>
+                </div>
               </div>
             </Col>
             <Col md={6} className="px-0">
               <div
-                className={`${styles.footwearSection} ${styles.wrapperImg} ${styles.greyBg}`}
+                className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
               >
-                <img src="/images/woodland.webp" alt="woodland" width="300px" />
-                <h3>Innerwears</h3>
+                <img src="/images/women.jpg" alt="women" width="100%" />
+                <div className={`${styles.Content} right-content`}>
+                  <h3 className={styles.whiteTitle}>Shop Women’s Apparel</h3>
+                  <Button>Shop Now</Button>
+                </div>
               </div>
             </Col>
           </Row>
@@ -60,99 +212,22 @@ export default function Home() {
         <section className={styles.tShirtSectionWrap}>
           <Container>
             <Row>
-              <Col md={3}>
-                <div className={styles.tShirtSection}>
-                  <div className={styles.Content}>
-                    <h3>T-Shirt</h3>
-                    <h3>Shop Men | Shop Women</h3>
-                  </div>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={styles.tShirtSection}>
-                  <div className={styles.Content}>
-                    <h3>T-Shirt</h3>
-                    <h3>Shop Men | Shop Women</h3>
-                  </div>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={styles.tShirtSection}>
-                  <div className={styles.Content}>
-                    <h3>T-Shirt</h3>
-                    <h3>Shop Men | Shop Women</h3>
-                  </div>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={styles.tShirtSection}>
-                  <div className={styles.Content}>
-                    <h3>T-Shirt</h3>
-                    <h3>Shop Men | Shop Women</h3>
-                  </div>
-                </div>
-              </Col>
+              {exploreData?.map((data, id) => (
+                <Col md={3} key={id}>
+                  <ExploreCard data={data} />
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>
-        <section className={styles.footwearSection}>
-          <Container>
-            <div className={styles.wrapperImg}>
-              <img src="/images/woodland.webp" alt="woodland" width="300px" />
-              <h3>Footwear Banner</h3>
-            </div>
-          </Container>
-        </section>
-        <section className={styles.sliderSection}>
-          <div className={styles.wrapper}>
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={4.5}
-              breakpoints={{
-                // when window width is >= 640px
-                0: {
-                  slidesPerView: 1.5,
-                },
-                // when window width is >= 768px
-                768: {
-                  slidesPerView: 2.5,
-                },
-                // when window width is >= 1200px
-                1200: {
-                  slidesPerView: 4.5,
-                },
-              }}
-            >
-              <SwiperSlide>
-                <SliderCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <SliderCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <SliderCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <SliderCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <SliderCard />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </section>
 
-        <section className={styles.footwearSection}>
-          <Container>
-            <div className={styles.wrapperImg}>
-              <img src="/images/woodland.webp" alt="woodland" width="300px" />
-              <h3>Woodsports (Woodsports Active)</h3>
-            </div>
-          </Container>
+        <section className={styles.bannerSection}>
+          <div className={styles.Image}>
+            <img src="/images/banner-3.png" alt="banner" width="100%" />
+          </div>
+          <div className={styles.bannerContent}>
+            <Button>Shop Now</Button>
+          </div>
         </section>
         <section className={styles.sliderSection}>
           <div className={styles.wrapper}>
@@ -197,27 +272,12 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <Row>
-            <Col md={4} className="px-0">
-              <div className={`${styles.footwearSection} ${styles.wrapperImg}`}>
-                <img src="/images/woodland.webp" alt="woodland" width="300px" />
-                <h3>Bags</h3>
-              </div>
-            </Col>
-            <Col md={4} className="px-0">
-              <div
-                className={`${styles.footwearSection} ${styles.wrapperImg} ${styles.greyBg}`}
-              >
-                <img src="/images/woodland.webp" alt="woodland" width="300px" />
-                <h3>Innerwears</h3>
-              </div>
-            </Col>
-            <Col md={4} className="px-0">
-              <div className={`${styles.footwearSection} ${styles.wrapperImg}`}>
-                <img src="/images/woodland.webp" alt="woodland" width="300px" />
-                <h3>Belts & More</h3>
-              </div>
-            </Col>
+          <Row className="mx-0">
+            {threeCards?.map((data, id) => (
+              <Col md={4} className="px-0" key={id}>
+                <HomeProductCard customClass={`mb-0`} data={data} />
+              </Col>
+            ))}
           </Row>
         </section>
         <section className={styles.instagramSection}>
@@ -233,42 +293,53 @@ export default function Home() {
             </Row>
             <Row>
               <Col md={12}>
-                <div className="d-flex gap-3">
-                  <div className={styles.instaCard}></div>
-                  <div className={styles.instaCard}></div>
-                  <div className={styles.instaCard}></div>
-                  <div className={styles.instaCard}></div>
-                  <div className={styles.instaCard}></div>
+                <div className={`d-flex gap-3 ${styles.flexWrap}`}>
+                  {instaCard?.map((data, id) => (
+                    <div className={styles.instaCard} key={id}>
+                      <div className={styles.image}>
+                        <img src={data?.img} alt="insta" width="100%" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </Col>
             </Row>
           </Container>
         </section>
-        <section className="py-5">
+        <section className={`py-5 ${styles.lastSection}`}>
           <Container>
             <Row>
               <Col md={6} className="px-0">
                 <div
-                  className={`${styles.footwearSection} ${styles.wrapperImg}`}
+                  className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >
-                  <img
-                    src="/images/woodland.webp"
-                    alt="woodland"
-                    width="300px"
-                  />
-                  <h3>Woodsports (Woodsports Active)</h3>
+                  <img src="/images/pro.jpg" alt="men" width="100%" />
+                  <div className={`${styles.Content} `}>
+                    <h3 className={styles.whiteTitle}>Pro Planet</h3>
+                    <p>
+                      Proplanet is a community that is committed to make our
+                      planet a better place to live in. Our ultimate goal is to
+                      inspire the next generation and increase their
+                      participation in the conservation of nature.
+                    </p>
+                    <Button>Read More</Button>
+                  </div>
                 </div>
               </Col>
               <Col md={6} className="px-0">
                 <div
-                  className={`${styles.footwearSection} ${styles.greyBg} ${styles.wrapperImg}`}
+                  className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >
-                  <img
-                    src="/images/woodland.webp"
-                    alt="woodland"
-                    width="300px"
-                  />
-                  <h3>Woodsports (Woodsports Active)</h3>
+                  <img src="/images/research.jpg" alt="women" width="100%" />
+                  <div className={`${styles.Content} `}>
+                    <h3 className={styles.whiteTitle}>Woodland Research Lab</h3>
+                    <p>
+                      Woodland's expertise combines activity focused designs and
+                      technologically advanced materials available, created in
+                      the most innovative and effective manner possible.
+                    </p>
+                    <Button>Read More</Button>
+                  </div>
                 </div>
               </Col>
             </Row>

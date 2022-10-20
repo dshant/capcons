@@ -1,22 +1,37 @@
 .footwearSection {
+  /* background: #ebebeb;
+  padding: 50px 0; */
   background: #ebebeb;
-  padding: 50px 0;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .wrapperImg {
   text-align: center;
 }
 .wrapperImg img {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 .sliderCard h3 {
-  font-size: 18px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
   font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  align-items: center;
+  color: var(--color-black);
 }
 .content {
   padding-top: 20px;
 }
 .content p,
 .content span {
-  font-size: 14px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
   font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--color-black);
 }

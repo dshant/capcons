@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import styles from "./header.module.css";
 import { BsFillCartFill, BsFillPersonFill, BsSearch } from "react-icons/bs";
+import Link from "next/link";
 
 const navLinks = [
   {
@@ -61,13 +62,15 @@ export const Header = () => {
         </div>
         <Navbar expand="lg" className={`py-0 ${styles.navBar}`}>
           <Container className={styles.Container}>
-            <Navbar.Brand href="#" className="py-0">
-              <img
-                src="/images/logo.svg"
-                alt="logo"
-                width={"100px"}
-                height={"80px"}
-              />
+            <Navbar.Brand className="py-0">
+              <Link href="/" passHref>
+                <img
+                  src="/images/logo.svg"
+                  alt="logo"
+                  width={"100px"}
+                  height={"80px"}
+                />
+              </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
             <Navbar.Offcanvas

@@ -12,6 +12,7 @@ import {
 } from "../components";
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const homeCardData = [
   {
@@ -160,6 +161,12 @@ export default function Home() {
             <Swiper
               spaceBetween={30}
               slidesPerView={4.5}
+              loop="true"
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
               breakpoints={{
                 // when window width is >= 640px
                 0: {
@@ -234,6 +241,11 @@ export default function Home() {
             <Swiper
               spaceBetween={30}
               slidesPerView={4.5}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
               breakpoints={{
                 // when window width is >= 640px
                 0: {

@@ -190,8 +190,8 @@ export default function Home() {
             </Swiper>
           </div>
         </section>
-        <section>
-          <Row className={`mx-0 ${styles.customRow}`}>
+        <section className="pe-3">
+          <Row className={` ${styles.customRow}`}>
             <Col md={6} className="px-0">
               <div
                 className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}

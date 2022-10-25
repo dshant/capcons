@@ -23,7 +23,14 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
   color: var(--color-green);
+}
+.navLink:hover {
+  color: var(--color-green);
+  text-decoration-color: var(--color-green);
 }
 .Container {
   align-items: flex-end !important;

@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  Container,
-  Offcanvas,
-  Form,
-  Nav,
-  Navbar,
-  Button,
-} from "react-bootstrap";
-import { Container as MatContainer, AppBar, Toolbar, Link as Mat_Link, Grid, Typography, InputBase, Box, } from '@mui/material';
+import { AppBar, Toolbar, Link as Mat_Link, Grid, InputBase, Box } from '@mui/material';
 import styles from "./header.module.css";
 import { BsFillCartFill, BsFillPersonFill, BsSearch } from "react-icons/bs";
-import Link from "next/link";
-
 import { styled, alpha } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
+import Link from "next/link";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -26,7 +16,7 @@ const Search = styled('div')(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: 'auto'
   },
 }));
 
@@ -45,7 +35,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'black',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -80,28 +69,29 @@ const navLinks = [
     text: "Labs",
   },
 ];
+
 export const Header = () => {
   
   return (
     <>
       <header>
         <div className={styles.topHeader}>
-            <Box py={1} display="flex" justifyContent={'flex-end'} alignItems='center' gap={3} className="list-unstyled">
-              <li>
-                <BsFillCartFill />
-              </li>
-              <li>
-                <span>Order Status |</span>
-              </li>
-              <li>
-                <span>Find Store |</span>
-              </li>
-              <li>
-                <span>Sign In</span>
-              </li>
-              <li>
-                <BsFillPersonFill />
-              </li>
+          <Box py={1} display="flex" justifyContent={'flex-end'} alignItems='center' gap={3} className="list-unstyled">
+            <li>
+              <BsFillCartFill />
+            </li>
+            <li>
+              <span>Order Status |</span>
+            </li>
+            <li>
+              <span>Find Store |</span>
+            </li>
+            <li>
+              <span>Sign In</span>
+            </li>
+            <li>
+              <BsFillPersonFill />
+            </li>
           </Box>
         </div>
 
@@ -130,7 +120,7 @@ export const Header = () => {
                   </Mat_Link>
                 ))}
               </Grid>
-
+                
               <Search>
                 <SearchIconWrapper>
                   <BsSearch />
@@ -140,10 +130,8 @@ export const Header = () => {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-
             </Toolbar>
           </AppBar>
-          {/* <Toolbar /> */}
         </React.Fragment>
 
         {/* <Navbar expand="lg" className={`py-0 ${styles.navBar}`}>

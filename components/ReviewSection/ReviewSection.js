@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Col, Row, ProgressBar } from "react-bootstrap";
+import { ProgressBar } from "react-bootstrap";
 import styles from "./review.module.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Button } from "@mui/material";
 
 export const ReviewSection = () => {
   return (
@@ -27,7 +27,7 @@ export const ReviewSection = () => {
                       </div>
                       <span>65 Reviews</span>
                     </div>
-                    <Button className="mb-2" variant="outline-secondary">
+                    <Button className="mb-2" variant="outlined" color='inherit'>
                       Write a Review
                     </Button>
                   </div>

@@ -10,6 +10,8 @@ import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
+import GetLook from './get-look/index'
+import ProductSingle from './product-single/index'
 
 const homeCardData = [
   {
@@ -127,6 +129,7 @@ const dealCardData = [
 export default function Home() {
   return (
     <>
+      <ProductSingle/>
       <AppLayout>
         <section className={styles.homeSlider}>
           <div className={`${styles.slides}`}>

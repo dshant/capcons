@@ -1,8 +1,7 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
 import styles from "./footer.module.css";
 import { Container } from "@mui/system";
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemText, Typography, Grid } from "@mui/material";
 
 export const Footer = () => {
   return (

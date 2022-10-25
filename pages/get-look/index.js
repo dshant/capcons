@@ -1,6 +1,5 @@
 import React from "react";
 import { AppLayout } from "../../components";
-import { Col, Container, Row } from "react-bootstrap";
 import { Swiper } from "swiper/react";
 import "swiper/css/navigation";
 import styles from "./index.module.css";
@@ -9,6 +8,8 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { SwiperSlide } from "swiper/react";
+import { Box, Grid } from "@mui/material";
+import { Container } from "@mui/system";
 
 export default function GetLook() {
   return (
@@ -19,16 +20,16 @@ export default function GetLook() {
             <h1>GET IN THE LOOK</h1>
           </div>
           <Container>
-            <Row>
-              <Col sm={12} md={5}>
+            <Grid container spacing={4}>
+              <Grid item sm={12} md={5}>
                 <div className={styles.HalfImg}>
                   <img
                     src="/images/Screenshot 2022-10-17 182821.png"
                     alt="image"
                   />
                 </div>
-              </Col>
-              <Col sm={12} md={6}>
+              </Grid>
+              <Grid item sm={12} md={6}>
                 <div className={styles.HeadingCollection}>
                   <h4>NEW COLLECTION</h4>
                   <h2>SHOP THE LOOK BOOK</h2>
@@ -140,43 +141,43 @@ export default function GetLook() {
                     </Swiper>
                   </div>
                 </div>
-              </Col>
-              <div className={styles.RecommendedYou}>
-                <h1>Recommended for You</h1>
-              </div>
-              <Container>
-                <Row>
-                  <Col md={3}>
-                    <div className={styles.ModelImg}>
-                      <img src="images/Screenshot 2022-10-17 185546.png" />
-                      <h2>BLUE SHORTS</h2>
-                      <p>$ 1326</p>
-                    </div>
-                  </Col>
-                  <Col md={3}>
-                    <div className={styles.ModelImg}>
-                      <img src="images/Screenshot 2022-10-17 185607.png" />
-                      <h2>WINE SWEAT SHIRT</h2>
-                      <p>$ 1326</p>
-                    </div>
-                  </Col>
-                  <Col md={3}>
-                    <div className={styles.ModelImg}>
-                      <img src="images/Screenshot 2022-10-17 185627.png" />
-                      <h2>SIZE: XS S M L XL XXL</h2>
-                      <p>$ 1326</p>
-                    </div>
-                  </Col>
-                  <Col md={3}>
-                    <div className={styles.ModelImg}>
-                      <img src="images/Screenshot 2022-10-17 185646.png" />
-                      <h2>GREY JOGGER PANTS</h2>
-                      <p>$ 1326</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-            </Row>
+              </Grid>
+            </Grid>
+          </Container>
+          <div className={styles.RecommendedYou}>
+            <h1>Recommended for You</h1>
+          </div>
+          <Container>
+            <Box display='flex' columnGap={4}>
+              <Box md={3}>
+                <div className={styles.ModelImg}>
+                  <img src="images/Screenshot 2022-10-17 185546.png" />
+                  <h2>BLUE SHORTS</h2>
+                  <p>$ 1326</p>
+                </div>
+              </Box>
+              <Box md={3}>
+                <div className={styles.ModelImg}>
+                  <img src="images/Screenshot 2022-10-17 185607.png" />
+                  <h2>WINE SWEAT SHIRT</h2>
+                  <p>$ 1326</p>
+                </div>
+              </Box>
+              <Box md={3}>
+                <div className={styles.ModelImg}>
+                  <img src="images/Screenshot 2022-10-17 185627.png" />
+                  <h2>SIZE: XS S M L XL XXL</h2>
+                  <p>$ 1326</p>
+                </div>
+              </Box>
+              <Box md={3}>
+                <div className={styles.ModelImg}>
+                  <img src="images/Screenshot 2022-10-17 185646.png" />
+                  <h2>GREY JOGGER PANTS</h2>
+                  <p>$ 1326</p>
+                </div>
+              </Box>
+            </Box>
           </Container>
         </section>
       </AppLayout>

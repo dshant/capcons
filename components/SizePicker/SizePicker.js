@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "react-bootstrap";
 import styles from "./sizePicker.module.css";
+import {Button, Box} from '@mui/material';
 
 export const SizePicker = () => {
   return (
@@ -11,7 +11,7 @@ export const SizePicker = () => {
           <h5>SIZE</h5>
           <Link href="">SIZE GUIDE</Link>
         </div>
-        <div className="d-flex flex-wrap gap-3">
+        <Box sx={{ flexWrap: 'wrap' }} display='flex' gap={3}>
           <Button variant="outline">37</Button>
           <Button variant="outline">38</Button>
           <Button variant="outline">39</Button>
@@ -20,7 +20,7 @@ export const SizePicker = () => {
           <Button variant="outline">42</Button>
           <Button variant="outline">43</Button>
           <Button variant="outline">44</Button>
-        </div>
+        </Box>
       </div>
     </>
   );

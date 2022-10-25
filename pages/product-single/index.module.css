@@ -77,6 +77,7 @@
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
+  font-family: "Raleway", sans-serif !important;
 }
 .benifitsCard {
   justify-content: space-around;

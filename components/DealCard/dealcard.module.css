@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: none;
+  border-radius: 0;
 }
 .footwearSection span {
   background: #a31010;
@@ -25,7 +27,7 @@
   /* margin-bottom: 40px; */
 }
 .sliderCard h3 {
-  /* font-family: "Roboto Condensed"; */
+  font-family: "Raleway", sans-serif !important;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;

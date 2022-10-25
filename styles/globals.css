@@ -120,6 +120,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 .img-overlay-2::before {
   height: 100% !important;

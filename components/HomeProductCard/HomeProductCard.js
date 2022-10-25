@@ -1,3 +1,5 @@
+import { Paper, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 import { Button } from "../UI";
 import styles from "./homeProductCard.module.css";
@@ -5,15 +7,21 @@ import styles from "./homeProductCard.module.css";
 export const HomeProductCard = ({ data, customClass }) => {
   return (
     <>
-      <div className={`${styles.productWrapper} ${customClass}`}>
+      <Paper className={`${styles.productWrapper} ${customClass}`}>
         <div className={`${styles.image} img-overlay`}>
-          <img src={data?.img} alt="product" />
+          <Image
+            src={data?.img}
+            alt="product"
+            width="100%"
+            height="100%"
+            layout="responsive"
+          />
         </div>
         <div className={styles.content}>
-          <h3>{data?.title}</h3>
+          <Typography variant="h3">{data?.title}</Typography>
           <Button variant="outline">Shop Now</Button>
         </div>
-      </div>
+      </Paper>
     </>
   );
 };

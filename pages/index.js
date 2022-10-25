@@ -1,7 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { Col, Container, Row } from "react-bootstrap";
 import {
   AppLayout,
   Button,
@@ -12,7 +8,8 @@ import {
 } from "../components";
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay } from "swiper";
+import { Box, Card, Container, Grid, Typography } from "@mui/material";
 
 const homeCardData = [
   {
@@ -138,13 +135,13 @@ export default function Home() {
         </section>
         <section className={`${styles.products}`}>
           <Container>
-            <Row>
+            <Grid container spacing={2}>
               {homeCardData?.map((data, id) => (
-                <Col md={4} key={id}>
+                <Grid item xs={12} sm={4} key={id}>
                   <HomeProductCard data={data} />
-                </Col>
+                </Grid>
               ))}
-            </Row>
+            </Grid>
           </Container>
         </section>
         <section className={styles.bannerSection}>
@@ -157,7 +154,7 @@ export default function Home() {
         </section>
 
         <section className={styles.sliderSection}>
-          <div className={styles.wrapper}>
+          <Box className={styles.wrapper}>
             <Swiper
               spaceBetween={30}
               slidesPerView={4.5}
@@ -188,43 +185,54 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </Box>
         </section>
         <section className="pe-3">
-          <Row className={` ${styles.customRow}`}>
-            <Col md={6} className="px-0">
-              <div
+          <Grid container className={` ${styles.customRow}`}>
+            <Grid md={6} className="px-0">
+              <Card
                 className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
               >
                 <img src="/images/men.jpg" alt="men" width="100%" />
                 <div className={`${styles.Content} left-content`}>
-                  <h3 className={styles.whiteTitle}>Shop Men’s Apparel</h3>
+                  <Typography variant="h3" className={styles.whiteTitle}>
+                    Shop Men’s Apparel
+                  </Typography>
                   <Button>Shop Now</Button>
                 </div>
-              </div>
-            </Col>
-            <Col md={6} className="px-0">
-              <div
+              </Card>
+            </Grid>
+            <Grid md={6} className="px-0">
+              <Card
                 className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
               >
                 <img src="/images/women.jpg" alt="women" width="100%" />
                 <div className={`${styles.Content} right-content`}>
-                  <h3 className={styles.whiteTitle}>Shop Women’s Apparel</h3>
+                  <Typography variant="h3" className={styles.whiteTitle}>
+                    Shop Women’s Apparel
+                  </Typography>
                   <Button>Shop Now</Button>
                 </div>
-              </div>
-            </Col>
-          </Row>
+              </Card>
+            </Grid>
+          </Grid>
         </section>
         <section className={styles.tShirtSectionWrap}>
           <Container>
-            <Row>
+            <Grid container spacing={2}>
               {exploreData?.map((data, id) => (
-                <Col md={3} key={id}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={3}
+                  key={id}
+                  className={styles.customCol}
+                >
                   <ExploreCard data={data} />
-                </Col>
+                </Grid>
               ))}
-            </Row>
+            </Grid>
           </Container>
         </section>
 
@@ -284,77 +292,81 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <Row className="mx-0">
+          <Grid container className="mx-0">
             {threeCards?.map((data, id) => (
-              <Col md={4} className="px-0" key={id}>
+              <Grid item md={4} className="px-0" key={id}>
                 <HomeProductCard customClass={`mb-0`} data={data} />
-              </Col>
+              </Grid>
             ))}
-          </Row>
+          </Grid>
         </section>
         <section className={styles.instagramSection}>
           <Container>
-            <Row>
-              <Col md={12}>
-                <h3>AS WORN BY WOODLAND FAM</h3>
-                <p>
+            <Grid container>
+              <Grid item xs={12}>
+                <Typography variant="h3">AS WORN BY WOODLAND FAM</Typography>
+                <Typography>
                   Click to shop & mention us on instagram @woodlandworldwide to
                   be featured
-                </p>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={12}>
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12}>
                 <div className={`d-flex gap-3 ${styles.flexWrap}`}>
                   {instaCard?.map((data, id) => (
-                    <div className={styles.instaCard} key={id}>
+                    <Card className={styles.instaCard} key={id}>
                       <div className={styles.image}>
                         <img src={data?.img} alt="insta" width="100%" />
                       </div>
-                    </div>
+                    </Card>
                   ))}
                 </div>
-              </Col>
-            </Row>
+              </Grid>
+            </Grid>
           </Container>
         </section>
         <section className={`py-5 ${styles.lastSection}`}>
           <Container>
-            <Row>
-              <Col md={6} className="px-0">
+            <Grid container>
+              <Grid md={6} className="px-0">
                 <div
                   className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >
                   <img src="/images/pro.jpg" alt="men" width="100%" />
                   <div className={`${styles.Content} `}>
-                    <h3 className={styles.whiteTitle}>Pro Planet</h3>
-                    <p>
+                    <Typography variant="h3" className={styles.whiteTitle}>
+                      Pro Planet
+                    </Typography>
+                    <Typography>
                       Proplanet is a community that is committed to make our
                       planet a better place to live in. Our ultimate goal is to
                       inspire the next generation and increase their
                       participation in the conservation of nature.
-                    </p>
+                    </Typography>
                     <Button>Read More</Button>
                   </div>
                 </div>
-              </Col>
-              <Col md={6} className="px-0">
+              </Grid>
+              <Grid md={6} className="px-0">
                 <div
                   className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >
                   <img src="/images/research.jpg" alt="women" width="100%" />
                   <div className={`${styles.Content} `}>
-                    <h3 className={styles.whiteTitle}>Woodland Research Lab</h3>
-                    <p>
+                    <Typography variant="h3" className={styles.whiteTitle}>
+                      Woodland Research Lab
+                    </Typography>
+                    <Typography>
                       Woodland's expertise combines activity focused designs and
                       technologically advanced materials available, created in
                       the most innovative and effective manner possible.
-                    </p>
+                    </Typography>
                     <Button>Read More</Button>
                   </div>
                 </div>
-              </Col>
-            </Row>
+              </Grid>
+            </Grid>
           </Container>
         </section>
       </AppLayout>

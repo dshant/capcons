@@ -1,16 +1,24 @@
+import { Card, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 import styles from "./explorecard.module.css";
 
 export const ExploreCard = ({ data }) => {
   return (
-    <div className={styles.tShirtSection}>
+    <Card className={styles.tShirtSection}>
       <div className={`${styles.image} img-overlay`}>
-        <img src={data?.img} alt="t-shirt" />
+        <Image
+          src={data?.img}
+          alt="t-shirt"
+          width="100%"
+          height="100%"
+          layout="responsive"
+        />
       </div>
       <div className={styles.Content}>
-        <h3>{data?.title}</h3>
-        <h4>{data?.text}</h4>
+        <Typography variant="h3">{data?.title}</Typography>
+        <Typography variant="h4">{data?.text}</Typography>
       </div>
-    </div>
+    </Card>
   );
 };

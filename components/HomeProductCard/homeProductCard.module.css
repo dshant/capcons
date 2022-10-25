@@ -20,6 +20,7 @@
   line-height: 38px;
   text-align: center;
   color: var(--color-white);
+  font-family: "Raleway", sans-serif !important;
 }
 .content {
   position: absolute;
@@ -27,4 +28,5 @@
   width: 100%;
   text-align: center;
   color: #fff;
+  z-index: 2;
 }

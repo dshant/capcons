@@ -1,14 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  FormSelect,
-  Modal,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Form, FormSelect, Modal, Row } from "react-bootstrap";
 import { Swiper } from "swiper/react";
 import {
   AppLayout,
@@ -25,6 +17,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { Container, Grid, Typography } from "@mui/material";
 
 const images = [
   {
@@ -265,21 +258,23 @@ export default function ProductSingle() {
         <ReviewSection />
         <section className={`py-5 ${styles.topSellerSection}`}>
           <Container>
-            <h3 className="text-center mb-4">Top Sellers recommened for you</h3>
-            <Row>
-              <Col md={3}>
+            <Typography variant="h3" className="text-center mb-4">
+              Top Sellers recommened for you
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item md={3}>
                 <ProductCard />
-              </Col>
-              <Col md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <ProductCard />
-              </Col>
-              <Col md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <ProductCard />
-              </Col>
-              <Col md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <ProductCard />
-              </Col>
-            </Row>
+              </Grid>
+            </Grid>
           </Container>
         </section>
         <div

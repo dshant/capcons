@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Col, Container, Row, ProgressBar } from "react-bootstrap";
+import { Button, Col, Row, ProgressBar } from "react-bootstrap";
 import styles from "./review.module.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
+import { Container, Grid } from "@mui/material";
 
 export const ReviewSection = () => {
   return (
@@ -9,10 +10,10 @@ export const ReviewSection = () => {
       <section className={`py-3 ${styles.reviewSection}`}>
         <Container>
           <h3 className="text-center mb-4">CUSTOMER REVIEWS</h3>
-          <Row>
-            <Col md={8} className="mx-auto">
-              <Row>
-                <Col md={6}>
+          <Grid container spacing={2}>
+            <Grid item md={8} className="mx-auto">
+              <Grid container spacing={2}>
+                <Grid item md={6}>
                   <div className={styles.wrapper}>
                     <h3>98%</h3>
                     <p>Recommend this product</p>
@@ -30,8 +31,8 @@ export const ReviewSection = () => {
                       Write a Review
                     </Button>
                   </div>
-                </Col>
-                <Col md={6}>
+                </Grid>
+                <Grid item md={6}>
                   <div className={`d-block ${styles.wrapper}`}>
                     <p>RATED BY CUSTOMERS</p>
 
@@ -58,10 +59,10 @@ export const ReviewSection = () => {
                       </div>
                     </div>
                   </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Container>
       </section>
     </>

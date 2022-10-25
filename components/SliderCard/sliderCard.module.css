@@ -14,6 +14,10 @@
 .wrapperImg img {
   /* margin-bottom: 40px; */
 }
+.sliderCard {
+  box-shadow: none;
+  border-radius: 0;
+}
 .sliderCard h3 {
   font-family: "Roboto Condensed";
   font-style: normal;

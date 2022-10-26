@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormSelect, Modal, Row } from "react-bootstrap";
 import { Swiper } from "swiper/react";
 import {
   AppLayout,
@@ -17,7 +16,19 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import { Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Modal,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { Stack } from "@mui/system";
 
 const images = [
   {
@@ -132,7 +143,16 @@ const colorsArray = [
     ],
   },
 ];
-
+const style = {
+  position: "absolute",
+  inset: "0",
+  // transform: "translate(-50%, -50%)",
+  width: "100%",
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  // p: 4,
+};
 export default function ProductSingle() {
   const [show, setShow] = useState(false);
   const [mobileShow, mobileSetShow] = useState(false);
@@ -140,16 +160,29 @@ export default function ProductSingle() {
   const [selectedColor, setSelectedColor] = useState(colorsArray[0]);
 
   const handleClose = () => setShow(false);
+  const handleMobileOpen = () => mobileSetShow(true);
   const handleMobileClose = () => mobileSetShow(false);
+  const [quant, setQuant] = React.useState("");
+
+  const handleChange = (event) => {
+    setQuant(event.target.value);
+  };
 
   return (
     <>
       <AppLayout>
-        <section className={`py-5 ${styles.firstSection}`}>
+        <section
+          className={` ${styles.firstSection}`}
+          style={{ padding: "3rem 0" }}
+        >
           <Container>
-            <Row>
-              <Col md={7}>
-                <div className={`d-flex flex-wrap ${styles.customCursor}`}>
+            <Grid container spacing={2}>
+              <Grid item md={7}>
+                <Stack
+                  direction="row"
+                  flexWrap="wrap"
+                  className={`${styles.customCursor}`}
+                >
                   {selectedColor?.sliderimages?.map((data) => (
                     <div className={styles.ImageDiv} key={data?.id}>
                       <img
@@ -160,12 +193,17 @@ export default function ProductSingle() {
                       />
                     </div>
                   ))}
-                </div>
+                </Stack>
                 <div className={styles.mobileSlider}>
                   <div className={styles.mobileHead}>
-                    <h3 className={styles.title}>Creek Boots Olive Green</h3>
-                    <p className={styles.price}> $8,999</p>
-                    <p className={styles.orgPrice}> $10,999</p>
+                    <Typography variant="h3" className={styles.title}>
+                      Creek Boots Olive Green
+                    </Typography>
+                    <Typography className={styles.price}> $8,999</Typography>
+                    <Typography className={styles.orgPrice}>
+                      {" "}
+                      $10,999
+                    </Typography>
                   </div>
                   <Swiper
                     style={{
@@ -180,26 +218,34 @@ export default function ProductSingle() {
                     modules={[Pagination]}
                   >
                     {selectedColor?.sliderimages?.map((data) => (
-                      <SwiperSlide key={data?.id}>
+                      <SwiperSlide
+                        key={data?.id}
+                        className={styles.swiperSlide}
+                      >
                         <div className={`image `}>
                           <img
                             src={data?.path}
                             alt="..."
                             className="img-fluid"
-                            onClick={() => mobileSetShow(true)}
+                            onClick={handleMobileOpen}
                           />
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
                 </div>
-              </Col>
-              <Col md={5}>
+              </Grid>
+              <Grid item md={5}>
                 <div className={styles.detail}>
                   <div className={styles.deskHead}>
-                    <h3 className={styles.title}>Creek Boots Olive Green</h3>
-                    <p className={styles.price}> $8,999</p>
-                    <p className={styles.orgPrice}> $10,999</p>
+                    <Typography variant="h3" className={styles.title}>
+                      Creek Boots Olive Green
+                    </Typography>
+                    <Typography className={styles.price}> $8,999</Typography>
+                    <Typography className={styles.orgPrice}>
+                      {" "}
+                      $10,999
+                    </Typography>
                   </div>
                   <ColorPicker
                     setSelectedColor={setSelectedColor}
@@ -207,58 +253,84 @@ export default function ProductSingle() {
                     colorsArray={colorsArray}
                   />
                   <SizePicker />
-                  <div className={` pt-5 pb-3 ${styles.quantity}`}>
-                    <div className="d-flex gap-3">
-                      <FormSelect>
-                        <option>Qty 2</option>
-                        <option>Qty 2</option>
-                        <option>Qty 2</option>
-                      </FormSelect>
-                      <Button variant="black">Add to cart</Button>
-                    </div>
+                  <div className={` ${styles.quantity}`}>
+                    <Stack direction="row" spacing={2}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Quantity
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={quant}
+                          label="Quant"
+                          onChange={handleChange}
+                        >
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                        </Select>
+                      </FormControl>
+
+                      <button type="button" variant="black">
+                        Add to cart
+                      </button>
+                    </Stack>
                   </div>
-                  <div
-                    className={`d-flex gap-4 flex-wrap align-items-center ${styles.pinCode}`}
+                  <Stack
+                    direction="row"
+                    spacing={3}
+                    alignItems="center"
+                    flexWrap="wrap"
+                    className={` ${styles.pinCode}`}
                   >
-                    <Form className="d-flex align-items-center gap-2">
-                      <Form.Control
-                        type="text"
-                        placeholder="PIN CODE"
-                        className="me-2"
-                        aria-label="Search"
+                    <Stack direction="row" spacing={2} alignItems="center">
+                      <TextField
+                        id="outlined-basic"
+                        label="PIN CODE"
+                        variant="outlined"
                       />
-                      <Button variant="black">CHECK</Button>
-                    </Form>
+                      <button type="button" variant="black">
+                        CHECK
+                      </button>
+                    </Stack>
                     <Link href="">Import, Manufacturing & Packaging Info</Link>
-                  </div>
-                  <div
-                    className={`d-flex text-center pt-5 pb-4 ${styles.benifitsCard}`}
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    textAlign="center"
+                    paddingTop={4}
+                    paddingBottom={2}
+                    className={`${styles.benifitsCard}`}
                   >
                     <div className={styles.benifits}>
                       <img src="/images/fingerprint.png" alt="" />
-                      <h6>DURABLE</h6>
+                      <Typography variant="h6">DURABLE</Typography>
                     </div>
                     <div className={styles.benifits}>
                       <img src="/images/fingerprint.png" alt="" />
-                      <h6>WATERPROOF</h6>
+                      <Typography variant="h6">WATERPROOF</Typography>
                     </div>
                     <div className={styles.benifits}>
                       <img src="/images/fingerprint.png" alt="" />
-                      <h6>TOUGHENED GRIP</h6>
+                      <Typography variant="h6">TOUGHENED GRIP</Typography>
                     </div>
-                  </div>
-                  <div className={`py-3 breifDetail`}>
+                  </Stack>
+                  <div className={`breifDetail`} style={{ padding: "1rem 0" }}>
                     <ProductDetail />
                   </div>
                 </div>
-              </Col>
-            </Row>
+              </Grid>
+            </Grid>
           </Container>
         </section>
         <ReviewSection />
-        <section className={`py-5 ${styles.topSellerSection}`}>
+        <section
+          className={` ${styles.topSellerSection}`}
+          style={{ padding: "3rem 0" }}
+        >
           <Container>
-            <Typography variant="h3" className="text-center mb-4">
+            <Typography variant="h3" textAlign="center" marginBottom={2}>
               Top Sellers recommened for you
             </Typography>
             <Grid container spacing={2}>
@@ -295,10 +367,10 @@ export default function ProductSingle() {
             close
           </button>
 
-          <Modal.Body>
+          <div>
             <div>
-              <Row>
-                <Col md={2}>
+              <Grid container spacing={2}>
+                <Grid item sm={2}>
                   <div
                     style={{
                       position: "sticky",
@@ -338,8 +410,8 @@ export default function ProductSingle() {
                       />
                     ))}
                   </div>
-                </Col>
-                <Col md={10}>
+                </Grid>
+                <Grid item sm={10}>
                   <div style={{ padding: "20px", marginLeft: 20 }}>
                     {selectedColor?.sliderimages.map((i) => (
                       <div
@@ -352,32 +424,35 @@ export default function ProductSingle() {
                       </div>
                     ))}
                   </div>
-                </Col>
-              </Row>
+                </Grid>
+              </Grid>
             </div>
-          </Modal.Body>
+          </div>
         </div>
+
         <Modal
-          show={mobileShow}
-          onHide={handleMobileClose}
+          open={mobileShow}
+          onClose={handleMobileClose}
           className={`swiper-modal`}
         >
-          <Modal.Header closeButton></Modal.Header>
-          <Modal.Body>
-            <Container>
-              <Row>
-                <Col md={12}>
-                  <div className={`d-flex flex-wrap `}>
-                    {selectedColor?.sliderimages.map((i) => (
-                      <div className={styles.ImageDiv} key={i.id} id={i.id}>
-                        <img src={i?.path} alt="" width="100%" />
-                      </div>
-                    ))}
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </Modal.Body>
+          <Box sx={style}>
+            <div onClick={() => mobileSetShow(false)}> close </div>
+            <div>
+              <Container>
+                <Grid container spacing={2}>
+                  <Grid item md={12}>
+                    <Stack direction="row" flexWrap="wrap">
+                      {selectedColor?.sliderimages.map((i) => (
+                        <div className={styles.ImageDiv} key={i.id} id={i.id}>
+                          <img src={i?.path} alt="" width="100%" />
+                        </div>
+                      ))}
+                    </Stack>
+                  </Grid>
+                </Grid>
+              </Container>
+            </div>
+          </Box>
         </Modal>
       </AppLayout>
     </>

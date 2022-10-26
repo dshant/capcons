@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ebebeb;
+  font-family: "Raleway", sans-serif !important;
 }
 
 .HalfImg img {
@@ -18,11 +19,13 @@
   text-transform: uppercase;
   font-weight: 300;
   padding-top: 20px;
+  font-family: "Raleway", sans-serif !important;
 }
 .HeadingCollection h2 {
   font-size: 50px;
   text-transform: uppercase;
   font-weight: 300;
+  font-family: "Raleway", sans-serif !important;
 }
 .HeadingCollection hr {
   width: 50%;
@@ -57,6 +60,7 @@
   text-transform: uppercase;
   margin-top: 60px;
   margin-bottom: 20px;
+  font-family: "Raleway", sans-serif !important;
 }
 .ModelImg {
   margin-bottom: 70px;
@@ -67,6 +71,7 @@
   font-weight: 300;
   text-transform: uppercase;
   margin-top: 20px;
+  font-family: "Raleway", sans-serif !important;
 }
 /* .swiper-button-next{
     color: black !important;

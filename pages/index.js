@@ -8,9 +8,10 @@ import {
 } from "../components";
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
-
+import { Stack } from "@mui/system";
+import "swiper/css/navigation";
 const homeCardData = [
   {
     img: "/images/product-1.jpg",
@@ -187,9 +188,9 @@ export default function Home() {
             </Swiper>
           </Box>
         </section>
-        <section className="pe-3">
+        <section style={{ paddingRight: "1rem" }}>
           <Grid container className={` ${styles.customRow}`}>
-            <Grid md={6} className="px-0">
+            <Grid md={6}>
               <Card
                 className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
               >
@@ -202,7 +203,7 @@ export default function Home() {
                 </div>
               </Card>
             </Grid>
-            <Grid md={6} className="px-0">
+            <Grid md={6}>
               <Card
                 className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay`}
               >
@@ -253,7 +254,8 @@ export default function Home() {
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              modules={[Autoplay]}
+              navigation
+              modules={[Autoplay, Navigation]}
               breakpoints={{
                 // when window width is >= 640px
                 0: {
@@ -292,10 +294,13 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <Grid container className="mx-0">
+          <Grid container>
             {threeCards?.map((data, id) => (
-              <Grid item md={4} className="px-0" key={id}>
-                <HomeProductCard customClass={`mb-0`} data={data} />
+              <Grid item md={4} key={id}>
+                <HomeProductCard
+                  customClass={styles.marginBottom}
+                  data={data}
+                />
               </Grid>
             ))}
           </Grid>
@@ -313,7 +318,11 @@ export default function Home() {
             </Grid>
             <Grid container>
               <Grid item xs={12}>
-                <div className={`d-flex gap-3 ${styles.flexWrap}`}>
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  className={`${styles.flexWrap}`}
+                >
                   {instaCard?.map((data, id) => (
                     <Card className={styles.instaCard} key={id}>
                       <div className={styles.image}>
@@ -321,15 +330,18 @@ export default function Home() {
                       </div>
                     </Card>
                   ))}
-                </div>
+                </Stack>
               </Grid>
             </Grid>
           </Container>
         </section>
-        <section className={`py-5 ${styles.lastSection}`}>
+        <section
+          className={` ${styles.lastSection}`}
+          style={{ padding: "3rem 0" }}
+        >
           <Container>
             <Grid container>
-              <Grid md={6} className="px-0">
+              <Grid md={6}>
                 <div
                   className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >
@@ -348,7 +360,7 @@ export default function Home() {
                   </div>
                 </div>
               </Grid>
-              <Grid md={6} className="px-0">
+              <Grid md={6}>
                 <div
                   className={`${styles.footwearSection} ${styles.wrapperImg} img-overlay img-overlay-2`}
                 >

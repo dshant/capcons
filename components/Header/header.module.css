@@ -41,7 +41,29 @@
   line-height: 21px;
   color: var(--color-white);
 }
-
+.toolBar {
+  justify-content: space-between;
+  padding: 0;
+}
+.customDrawer {
+}
+.appBar {
+  background-color: var(--color-white);
+}
+.appBar a {
+  color: var(--color-green);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Raleway", sans-serif !important;
+}
+.mobileLinks a {
+  color: var(--color-green);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Raleway", sans-serif !important;
+}
 @media screen and (max-width: 991px) {
   .Container {
     align-items: center !important;

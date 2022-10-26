@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 import React from "react";
 import styles from "./colorPicker.module.css";
 
@@ -13,8 +15,8 @@ export const ColorPicker = ({
   return (
     <>
       <div className={styles.colorDiv}>
-        <h4>COLOR</h4>
-        <div className="d-flex gap-3">
+        <Typography variant="h4">COLOR</Typography>
+        <Stack direction="row" spacing={2}>
           {colorsArray?.map((color) => (
             <div
               className={`${styles.option} ${
@@ -26,7 +28,7 @@ export const ColorPicker = ({
               <img src={color?.colorImage} alt="shoe" />
             </div>
           ))}
-        </div>
+        </Stack>
       </div>
     </>
   );

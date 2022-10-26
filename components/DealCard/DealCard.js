@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./dealcard.module.css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Stack, Typography } from "@mui/material";
 
 const images = [
   {
@@ -42,12 +42,12 @@ export const DealCard = ({ data }) => {
 
         <div className={styles.content}>
           <Typography variant="h3">{data?.title}</Typography>
-          <div className="d-flex justify-content-between">
+          <Stack direction="row" justifyContent="space-between">
             <Typography className={styles.orgRate}>
               $ {data?.orgRate}
             </Typography>
             <span className={styles.rate}>$ {data?.rate}</span>
-          </div>
+          </Stack>
         </div>
       </Box>
     </>

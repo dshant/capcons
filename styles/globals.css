@@ -35,6 +35,7 @@ a {
     background: var(--color-black);
   }
 }
+
 .swiper-modal .modal-dialog {
   max-width: 100% !important;
   margin: 0 !important;
@@ -136,14 +137,14 @@ a {
   text-align: right !important;
   left: unset !important;
 }
-.image-slider .swiper-button-next::after {
+.swiper-button-next::after {
   content: "" !important;
   background-image: url(/images/next-icon.svg);
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
 }
-.image-slider .swiper-button-prev::after {
+.swiper-button-prev::after {
   content: "" !important;
   background-image: url("/images/prev-icon.svg");
   width: 100%;

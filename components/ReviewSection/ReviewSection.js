@@ -2,61 +2,127 @@ import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import styles from "./review.module.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
-import { Container, Grid, Button } from "@mui/material";
+import { Container, Grid, Button, Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
-export const ReviewSection = () => {
+export const ReviewSection = (props) => {
   return (
     <>
-      <section className={`py-3 ${styles.reviewSection}`}>
+      <section className={` ${styles.reviewSection}`}>
         <Container>
-          <h3 className="text-center mb-4">CUSTOMER REVIEWS</h3>
+          <Typography variant="h3" textAlign="center" marginBottom={3}>
+            CUSTOMER REVIEWS
+          </Typography>
           <Grid container spacing={2}>
-            <Grid item md={8} className="mx-auto">
+            <Grid item md={8} marginX="auto">
               <Grid container spacing={2}>
                 <Grid item md={6}>
                   <div className={styles.wrapper}>
-                    <h3>98%</h3>
-                    <p>Recommend this product</p>
-                    <div className="d-flex gap-3 align-items-center mb-3">
-                      <div className="d-flex gap-1">
+                    <Typography variant="h3" marginBottom={2}>
+                      98%
+                    </Typography>
+                    <Typography marginBottom={2}>
+                      Recommend this product
+                    </Typography>
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      alignItems="center"
+                      marginBottom={2}
+                    >
+                      <Stack direction="row" spacing={1}>
                         <BsStarFill />
                         <BsStarFill />
                         <BsStarFill />
                         <BsStar />
                         <BsStar />
-                      </div>
+                      </Stack>
                       <span>65 Reviews</span>
-                    </div>
-                    <Button className="mb-2" variant="outlined" color='inherit'>
+                    </Stack>
+                    <Button variant="outlined" color="inherit">
                       Write a Review
                     </Button>
                   </div>
                 </Grid>
                 <Grid item md={6}>
-                  <div className={`d-block ${styles.wrapper}`}>
-                    <p>RATED BY CUSTOMERS</p>
+                  <div
+                    className={` ${styles.wrapper}`}
+                    style={{ display: "block " }}
+                  >
+                    <Typography marginBottom={2}>RATED BY CUSTOMERS</Typography>
 
                     <div className={styles.progressRating}>
-                      <div className="d-flex gap-3 align-items-center mb-1">
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        marginBottom={1}
+                      >
                         <span>5.0</span>
-                        <ProgressBar now={80} />
-                      </div>
-                      <div className="d-flex gap-3 align-items-center mb-1">
+                        <div className={styles.progressBar}>
+                          <div
+                            className={styles.progressItem}
+                            style={{ width: "80%" }}
+                          ></div>
+                        </div>
+                      </Stack>
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        marginBottom={1}
+                      >
+                        {" "}
                         <span>4.0</span>
-                        <ProgressBar now={80} />
-                      </div>
-                      <div className="d-flex gap-3 align-items-center mb-1">
+                        <div className={styles.progressBar}>
+                          <div
+                            className={styles.progressItem}
+                            style={{ width: "60%" }}
+                          ></div>
+                        </div>
+                      </Stack>
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        marginBottom={1}
+                      >
                         <span>3.0</span>
-                        <ProgressBar now={40} />
-                      </div>
-                      <div className="d-flex gap-3 align-items-center mb-1">
+                        <div className={styles.progressBar}>
+                          <div
+                            className={styles.progressItem}
+                            style={{ width: "30%" }}
+                          ></div>
+                        </div>
+                      </Stack>
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        marginBottom={1}
+                      >
                         <span>2.0</span>
-                        <ProgressBar now={20} />
-                      </div>
-                      <div className="d-flex gap-3 align-items-center mb-1">
+                        <div className={styles.progressBar}>
+                          <div
+                            className={styles.progressItem}
+                            style={{ width: "20%" }}
+                          ></div>
+                        </div>
+                      </Stack>
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        marginBottom={1}
+                      >
                         <span>1.0</span>
-                        <ProgressBar now={10} />
-                      </div>
+                        <div className={styles.progressBar}>
+                          <div
+                            className={styles.progressItem}
+                            style={{ width: "10%" }}
+                          ></div>
+                        </div>
+                      </Stack>
                     </div>
                   </div>
                 </Grid>

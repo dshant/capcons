@@ -1,51 +1,24 @@
 import React from "react";
-import { AppBar, Toolbar, Link as Mat_Link, Grid, InputBase, Box } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Link as Mat_Link,
+  Box,
+  TextField,
+} from "@mui/material";
 import styles from "./header.module.css";
 import { BsFillCartFill, BsFillPersonFill, BsSearch } from "react-icons/bs";
-import { styled, alpha } from '@mui/material/styles';
 import Link from "next/link";
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto'
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: 'gray'
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'black',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Button from "@mui/material/Button";
+import { Container, Stack } from "@mui/system";
 
 const navLinks = [
   {
@@ -58,8 +31,9 @@ const navLinks = [
   },
   {
     link: "/",
-    text: "Outdoor",
+    text: "Bags & Gear",
   },
+
   {
     link: "/",
     text: "About Us",
@@ -68,37 +42,82 @@ const navLinks = [
     link: "/",
     text: "Labs",
   },
+  {
+    link: "/",
+    text: "Sale",
+  },
 ];
+const drawerWidth = 240;
 
-export const Header = () => {
-  
+export const Header = (props) => {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  const drawer = (
+    <Box onClick={handleDrawerToggle}>
+      <Link href="/" passHref>
+        <img
+          src="/images/logo.svg"
+          alt="logo"
+          width={"100px"}
+          height={"80px"}
+        />
+      </Link>
+      <Divider />
+      <List className={styles.mobileLinks}>
+        {navLinks.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton>
+              <ListItemText>
+                <Link href={item?.link}>{item?.text}</Link>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
   return (
     <>
       <header>
-        <div className={styles.topHeader}>
-          <Box py={1} display="flex" justifyContent={'flex-end'} alignItems='center' gap={3} className="list-unstyled">
-            <li>
-              <BsFillCartFill />
-            </li>
-            <li>
-              <span>Order Status |</span>
-            </li>
-            <li>
-              <span>Find Store |</span>
-            </li>
-            <li>
-              <span>Sign In</span>
-            </li>
-            <li>
-              <BsFillPersonFill />
-            </li>
-          </Box>
-        </div>
-
-        <React.Fragment>
-          <AppBar position='relative' style={{backgroundColor: 'white', boxShadow: 'unset'}}>
-            <Toolbar>
-              <Box ml={5}>
+        <AppBar component="nav" className={`app-bar ${styles.appBar}`}>
+          <div className={styles.topHeader}>
+            <Container>
+              <Box
+                py={1}
+                display="flex"
+                justifyContent={"flex-end"}
+                alignItems="center"
+                gap={3}
+                className="list-unstyled"
+              >
+                <li>
+                  <BsFillCartFill />
+                </li>
+                <li>
+                  <span>Order Status |</span>
+                </li>
+                <li>
+                  <span>Find Store |</span>
+                </li>
+                <li>
+                  <span>Sign In</span>
+                </li>
+                <li>
+                  <BsFillPersonFill />
+                </li>
+              </Box>
+            </Container>
+          </div>
+          <Container style={{ padding: "0" }}>
+            <Toolbar className={styles.toolBar}>
+              <Stack direction="row" alignItems={"flex-end"} spacing={2}>
                 <Link href="/" passHref>
                   <img
                     src="/images/logo.svg"
@@ -107,90 +126,58 @@ export const Header = () => {
                     height={"80px"}
                   />
                 </Link>
+                <Box sx={{ display: { xs: "none", md: "block" } }}>
+                  {navLinks.map((item) => (
+                    <Button key={item} sx={{ color: "#fff" }}>
+                      <Link href={item?.link}>{item?.text}</Link>
+                    </Button>
+                  ))}
+                </Box>
+              </Stack>
+              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                <TextField
+                  id="outlined-basic"
+                  label="search products"
+                  variant="standard"
+                />
+                <span>
+                  <BsSearch style={{ color: "#000" }} />
+                </span>
               </Box>
 
-              <Grid container ml={5} justifyContent={'flex-start'} alignItems={'flex-end'}>
-                {navLinks?.map((data, id) => (
-                  <Mat_Link
-                    href={data?.link}
-                    key={id}
-                    className={styles.navLink}
-                  >
-                    {data?.text}
-                  </Mat_Link>
-                ))}
-              </Grid>
-                
-              <Search>
-                <SearchIconWrapper>
-                  <BsSearch />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search"
-                  inputProps={{ 'aria-label': 'search' }}
-                />
-              </Search>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { md: "none" } }}
+              >
+                <MenuIcon style={{ color: "#000" }} />
+              </IconButton>
             </Toolbar>
-          </AppBar>
-        </React.Fragment>
-
-        {/* <Navbar expand="lg" className={`py-0 ${styles.navBar}`}>
-          <Container className={styles.Container}>
-            <Navbar.Brand className="py-0">
-              <Link href="/" passHref>
-                <img
-                  src="/images/logo.svg"
-                  alt="logo"
-                  width={"100px"}
-                  height={"80px"}
-                />
-              </Link>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-lg`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                  <img
-                    src="/images/logo.svg"
-                    alt="logo"
-                    width={"100px"}
-                    height={"80px"}
-                  />
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-start flex-grow-1  px-3">
-                  {navLinks?.map((data, id) => (
-                    <Nav.Link
-                      href={data?.link}
-                      key={id}
-                      className={styles.navLink}
-                    >
-                      {data?.text}
-                    </Nav.Link>
-                  ))}
-                </Nav>
-                <Form className="d-flex" style={{ paddingBottom: "10px" }}>
-                  <div className={`d-flex ${styles.form}`}>
-                    <Form.Control
-                      type="search"
-                      placeholder="Search"
-                      className="me-2"
-                      aria-label="Search"
-                    />
-                    <span>
-                      <BsSearch />
-                    </span>
-                  </div>
-                </Form>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
           </Container>
-        </Navbar> */}
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            className={styles.customDrawer}
+            container={container}
+            variant="persistent"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { sm: "block", md: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+              },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
       </header>
     </>
   );

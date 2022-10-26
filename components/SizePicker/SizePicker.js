@@ -1,17 +1,18 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./sizePicker.module.css";
-import {Button, Box} from '@mui/material';
+import { Button, Box, Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
 export const SizePicker = () => {
   return (
     <>
       <div className={`mt-3 ${styles.sizeDiv}`}>
-        <div className="d-flex justify-content-between py-3">
-          <h5>SIZE</h5>
+        <Stack direction="row" justifyContent="space-between" paddingY={2}>
+          <Typography variant="h5">SIZE</Typography>
           <Link href="">SIZE GUIDE</Link>
-        </div>
-        <Box sx={{ flexWrap: 'wrap' }} display='flex' gap={3}>
+        </Stack>
+        <Box sx={{ flexWrap: "wrap" }} display="flex" gap={3}>
           <Button variant="outline">37</Button>
           <Button variant="outline">38</Button>
           <Button variant="outline">39</Button>

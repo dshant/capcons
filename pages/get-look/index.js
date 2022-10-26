@@ -8,7 +8,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { SwiperSlide } from "swiper/react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 
 export default function GetLook() {
@@ -17,11 +17,11 @@ export default function GetLook() {
       <AppLayout>
         <section>
           <div className={styles.GetLook}>
-            <h1>GET IN THE LOOK</h1>
+            <Typography variant="h1">GET IN THE LOOK</Typography>
           </div>
           <Container>
             <Grid container spacing={4}>
-              <Grid item sm={12} md={5}>
+              <Grid item xs={12} sm={12} md={5}>
                 <div className={styles.HalfImg}>
                   <img
                     src="/images/Screenshot 2022-10-17 182821.png"
@@ -29,18 +29,18 @@ export default function GetLook() {
                   />
                 </div>
               </Grid>
-              <Grid item sm={12} md={6}>
+              <Grid item xs={12} sm={12} md={6}>
                 <div className={styles.HeadingCollection}>
-                  <h4>NEW COLLECTION</h4>
-                  <h2>SHOP THE LOOK BOOK</h2>
+                  <Typography variant="h4">NEW COLLECTION</Typography>
+                  <Typography variant="h2">SHOP THE LOOK BOOK</Typography>
                   <hr />
-                  <p>
+                  <Typography>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book.{" "}
-                  </p>
+                  </Typography>
                   <button>VIEW COLLECTION</button>
                   <div className="swiper-custom-slider">
                     <Swiper
@@ -112,25 +112,25 @@ export default function GetLook() {
                       <SwiperSlide>
                         <div className={styles.SliderImages}>
                           <img src="images/Screenshot 2022-10-17 182525.png" />
-                          <p>OLIVE JOGGER PANTS</p>
+                          <Typography>OLIVE JOGGER PANTS</Typography>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className={styles.SliderImages}>
                           <img src="images/Screenshot 2022-10-17 182525.png" />
-                          <p>NAVY HALF SLEEVES SHIRT</p>
+                          <Typography>NAVY HALF SLEEVES SHIRT</Typography>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className={styles.SliderImages}>
                           <img src="images/Screenshot 2022-10-17 182525.png" />
-                          <p>GREY STRAIGHT FIT DENIM</p>
+                          <Typography>GREY STRAIGHT FIT DENIM</Typography>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className={styles.SliderImages}>
                           <img src="images/Screenshot 2022-10-17 182525.png" />
-                          <p>CREEK BOLT CAMEL</p>
+                          <Typography>CREEK BOLT CAMEL</Typography>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
@@ -145,39 +145,39 @@ export default function GetLook() {
             </Grid>
           </Container>
           <div className={styles.RecommendedYou}>
-            <h1>Recommended for You</h1>
+            <Typography variant="h1">Recommended for You</Typography>
           </div>
           <Container>
-            <Box display='flex' columnGap={4}>
-              <Box md={3}>
+            <Grid container spacing={2}>
+              <Grid item md={3}>
                 <div className={styles.ModelImg}>
                   <img src="images/Screenshot 2022-10-17 185546.png" />
-                  <h2>BLUE SHORTS</h2>
-                  <p>$ 1326</p>
+                  <Typography variant="h2">BLUE SHORTS</Typography>
+                  <Typography>$ 1326</Typography>
                 </div>
-              </Box>
-              <Box md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <div className={styles.ModelImg}>
                   <img src="images/Screenshot 2022-10-17 185607.png" />
-                  <h2>WINE SWEAT SHIRT</h2>
-                  <p>$ 1326</p>
+                  <Typography variant="h2">WINE SWEAT SHIRT</Typography>
+                  <Typography>$ 1326</Typography>
                 </div>
-              </Box>
-              <Box md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <div className={styles.ModelImg}>
                   <img src="images/Screenshot 2022-10-17 185627.png" />
-                  <h2>SIZE: XS S M L XL XXL</h2>
-                  <p>$ 1326</p>
+                  <Typography variant="h2">SIZE: XS S M L XL XXL</Typography>
+                  <Typography>$ 1326</Typography>
                 </div>
-              </Box>
-              <Box md={3}>
+              </Grid>
+              <Grid item md={3}>
                 <div className={styles.ModelImg}>
                   <img src="images/Screenshot 2022-10-17 185646.png" />
-                  <h2>GREY JOGGER PANTS</h2>
-                  <p>$ 1326</p>
+                  <Typography variant="h2">GREY JOGGER PANTS</Typography>
+                  <Typography>$ 1326</Typography>
                 </div>
-              </Box>
-            </Box>
+              </Grid>
+            </Grid>
           </Container>
         </section>
       </AppLayout>

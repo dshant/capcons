@@ -2,7 +2,7 @@
   text-align: center;
   font-size: 30px;
   font-weight: 500;
-  /* margin:50px 0px; */
+  /* margin: 50px 0px; */
   height: 250px;
   display: flex;
   justify-content: center;
@@ -11,20 +11,28 @@
   font-family: "Raleway", sans-serif !important;
 }
 
+.HalfImg {
+  height: 100%;
+}
 .HalfImg img {
   width: 100%;
+  height: 100%;
 }
 .HeadingCollection h4 {
   padding-bottom: 15px;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
   padding-top: 20px;
   font-family: "Raleway", sans-serif !important;
+  font-size: 16px;
 }
 .HeadingCollection h2 {
-  font-size: 50px;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif !important;
+  font-size: 34px;
+}
+.HeadingCollection p {
   font-family: "Raleway", sans-serif !important;
 }
 .HeadingCollection hr {
@@ -42,12 +50,14 @@
   margin: 20px 0px;
 }
 .SliderImages {
-  margin: 30px 0px;
+  margin: 10px 0px;
   text-transform: uppercase;
 }
 .SliderImages img {
   width: 100%;
   background-color: #ebebeb;
+  height: 230px;
+  object-fit: cover;
 }
 .SliderImages p {
   font-size: 10px;

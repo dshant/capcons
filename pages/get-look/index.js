@@ -20,16 +20,13 @@ export default function GetLook() {
             <Typography variant="h1">GET IN THE LOOK</Typography>
           </div>
           <Container>
-            <Grid container spacing={4}>
-              <Grid item xs={12} sm={12} md={5}>
+            <Grid container spacing={4} style={{ marginTop: "0px" }}>
+              <Grid item xs={12} sm={12} md={5} style={{ paddingTop: "0" }}>
                 <div className={styles.HalfImg}>
-                  <img
-                    src="/images/Screenshot 2022-10-17 182821.png"
-                    alt="image"
-                  />
+                  <img src="/images/get-look.png" alt="image" />
                 </div>
               </Grid>
-              <Grid item xs={12} sm={12} md={6}>
+              <Grid item xs={12} sm={12} md={7} style={{ paddingTop: "0" }}>
                 <div className={styles.HeadingCollection}>
                   <Typography variant="h4">NEW COLLECTION</Typography>
                   <Typography variant="h2">SHOP THE LOOK BOOK</Typography>
@@ -45,8 +42,9 @@ export default function GetLook() {
                   <div className="swiper-custom-slider">
                     <Swiper
                       modules={[Navigation]}
-                      spaceBetween={30}
-                      slidesPerView={3}
+                      navigation
+                      spaceBetween={20}
+                      slidesPerView={4}
                       breakpoints={{
                         // when window width is >= 640px
                         0: {
@@ -87,12 +85,18 @@ export default function GetLook() {
                           <img src="images/Screenshot 2022-10-17 182729.png" />
                         </div>
                       </SwiperSlide>
+                      <SwiperSlide>
+                        <div className={styles.SliderImages}>
+                          <img src="images/Screenshot 2022-10-17 182729.png" />
+                        </div>
+                      </SwiperSlide>
                     </Swiper>
                   </div>
-                  <div className="">
+                  <div className="swiper-custom-slider">
                     <Swiper
                       modules={[Navigation]}
-                      spaceBetween={30}
+                      navigation
+                      spaceBetween={20}
                       slidesPerView={3}
                       breakpoints={{
                         // when window width is >= 640px
@@ -138,6 +142,11 @@ export default function GetLook() {
                           <img src="images/Screenshot 2022-10-17 183522.png" />
                         </div>
                       </SwiperSlide>
+                      <SwiperSlide>
+                        <div className={styles.SliderImages}>
+                          <img src="images/Screenshot 2022-10-17 183522.png" />
+                        </div>
+                      </SwiperSlide>
                     </Swiper>
                   </div>
                 </div>
@@ -148,7 +157,7 @@ export default function GetLook() {
             <Typography variant="h1">Recommended for You</Typography>
           </div>
           <Container>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} justifyContent="center">
               <Grid item md={3}>
                 <div className={styles.ModelImg}>
                   <img src="images/Screenshot 2022-10-17 185546.png" />

@@ -49,6 +49,8 @@
 }
 .appBar {
   background-color: var(--color-white);
+  box-shadow: none !important;
+  position: unset !important;
 }
 .appBar a {
   color: var(--color-green);

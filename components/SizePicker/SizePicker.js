@@ -7,7 +7,7 @@ import { Stack } from "@mui/system";
 export const SizePicker = () => {
   return (
     <>
-      <div className={`mt-3 ${styles.sizeDiv}`}>
+      <div className={` ${styles.sizeDiv}`} style={{ marginTop: "1rem" }}>
         <Stack direction="row" justifyContent="space-between" paddingY={2}>
           <Typography variant="h5">SIZE</Typography>
           <Link href="">SIZE GUIDE</Link>

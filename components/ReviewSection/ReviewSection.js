@@ -1,5 +1,4 @@
 import React from "react";
-import { ProgressBar } from "react-bootstrap";
 import styles from "./review.module.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import { Container, Grid, Button, Typography } from "@mui/material";

@@ -1,4 +1,4 @@
-import { Card, Typography } from "@mui/material";
+import { Card, Stack, Typography } from "@mui/material";
 import React from "react";
 import styles from "./productcard.module.css";
 
@@ -12,10 +12,10 @@ export const ProductCard = () => {
         </div>
         <div className={styles.Content}>
           <Typography variant="h4">Creek Boots Olive green</Typography>
-          <div className="d-flex gap-3 align-items-center">
+          <Stack container spacing={2} alignItems="center">
             <span className={styles.orgPrice}>$ 10,999 </span>
             <span className={styles.price}>$ 8,999</span>
-          </div>
+          </Stack>
         </div>
       </Card>
     </>

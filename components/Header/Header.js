@@ -95,7 +95,7 @@ export const Header = (props) => {
                 justifyContent={"flex-end"}
                 alignItems="center"
                 gap={3}
-                className="list-unstyled"
+                style={{ listStyle: "none" }}
               >
                 <li>
                   <BsFillCartFill />

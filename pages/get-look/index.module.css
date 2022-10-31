@@ -35,8 +35,19 @@
 .HeadingCollection p {
   font-family: "Raleway", sans-serif !important;
 }
-.HeadingCollection hr {
-  width: 50%;
+.HeadingCollection h2 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.HeadingCollection h2::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid #ccc;
+  width: 150px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
 }
 .HeadingCollection button {
   height: 50px;

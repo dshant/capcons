@@ -30,7 +30,7 @@ export default function GetLook() {
                 <div className={styles.HeadingCollection}>
                   <Typography variant="h4">NEW COLLECTION</Typography>
                   <Typography variant="h2">SHOP THE LOOK BOOK</Typography>
-                  <hr />
+
                   <Typography>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's

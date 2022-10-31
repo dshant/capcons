@@ -48,7 +48,7 @@
 .customDrawer {
 }
 .appBar {
-  background-color: var(--color-white);
+  background-color: var(--color-white) !important;
   box-shadow: none !important;
   position: unset !important;
 }

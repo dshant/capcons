@@ -1,7 +1,7 @@
 .footwearSection {
   /* background: #ebebeb;
       padding: 50px 0; */
-  background: #ebebeb;
+  background: #ebebeb !important;
   height: 250px;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@
   margin-top: 10px;
 }
 .thumbImg {
-  background-color: #ebebeb;
+  background-color: #ebebeb !important;
   padding: 10px;
   margin: 20px 0;
   display: flex;

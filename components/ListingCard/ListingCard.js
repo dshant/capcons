@@ -88,7 +88,7 @@ export const ListingCard = ({ data }) => {
         </Swiper>
         <div className={styles.content}>
           <Typography variant="h3">{data?.title}</Typography>
-          <Stack direction="row" justifyContent="space-between">
+          <Stack direction="row" spacing={2}>
             <Typography className={styles.orgRate}>
               $ {data?.orgRate}
             </Typography>

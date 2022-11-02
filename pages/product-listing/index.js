@@ -74,10 +74,10 @@ export default function ProductListing() {
         <section className={styles.breadCrumbSection}>
           <Container>
             <Typography variant="h5" className={styles.h5}>
-              HOME / SHOP / MEN / WOMEN
+              HOME / SHOP / MEN / BOOTS
             </Typography>
             <Stack direction="row" alignItems="center" spacing={3}>
-              <Typography variant="h3">MENS'S BOOTS</Typography>
+              <Typography variant="h3">MEN'S BOOTS</Typography>
               <Typography>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
@@ -125,7 +125,10 @@ export default function ProductListing() {
               <div className={styles.right}>
                 <h6>SORT BY</h6>
                 <Stack direction="row">
-                  <select className={styles.selectBox}>
+                  <select
+                    className={styles.selectBox}
+                    style={{ width: "200px" }}
+                  >
                     <option>FEATURED</option>
                     <option>SIZE</option>
                     <option>SIZE</option>

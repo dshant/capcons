@@ -11,3 +11,4 @@ export * from "./SliderCard";
 export * from "./UI";
 export * from "./ExploreCard";
 export * from "./DealCard";
+export * from "./ListingCard";

@@ -31,8 +31,8 @@ a {
     color-scheme: dark;
   }
   body {
-    color: var(--color-white);
-    background: var(--color-black);
+    color: var(--color-black);
+    background: var(--color-white);
   }
 }
 

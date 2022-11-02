@@ -1,6 +1,6 @@
 .footwearSection {
   /* background: #ebebeb;
-    padding: 50px 0; */
+      padding: 50px 0; */
   background: #ebebeb;
   height: 250px;
   display: flex;
@@ -25,6 +25,8 @@
 }
 .wrapperImg img {
   /* margin-bottom: 40px; */
+  width: 150px;
+  height: 150px;
 }
 .sliderCard h3 {
   font-family: "Raleway", sans-serif !important;
@@ -59,4 +61,17 @@
   color: #a30f11 !important;
   text-decoration: none !important;
   font-size: 14px !important;
+  margin-top: 10px;
+}
+.thumbImg {
+  background-color: #ebebeb;
+  padding: 10px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbImg img {
+  width: 40px;
+  height: 40px;
 }

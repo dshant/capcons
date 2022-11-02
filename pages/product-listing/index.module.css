@@ -5,16 +5,16 @@
   flex-wrap: wrap;
 }
 .sliderSection {
-  padding: 40px 0;
+  padding: 30px 0;
 }
 .breadCrumbSection {
-  padding: 40px 0 0px;
+  padding: 10px 0 0px;
 }
 .h5 {
-  font-size: 12px;
+  font-size: 12px !important;
   color: #000;
-  font-weight: 400;
-  margin-bottom: 30px;
+  font-weight: 400 !important;
+  margin-bottom: 30px !important;
 }
 .breadCrumbSection h3 {
   font-size: 34px;
@@ -34,6 +34,7 @@
   padding: 5px;
   color: #ccc;
   font-weight: 400;
+  font-size: 12px;
   border-radius: 3px;
 }
 .selectBox:focus-visible {
